@@ -23,7 +23,7 @@ hero:
   hero__description: Creative and pragmatic problem solver, husband and father.
   hero__button__text: Read about me
   hero__button__link: '/about'
-  hero__image: '/images/front.jpeg'
+  hero__image: '/images/hero-image.webp'
 
 
 #-------------------------------
