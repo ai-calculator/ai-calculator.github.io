@@ -4,7 +4,7 @@ description: >-
   An open source developer publication aimed at sharing well explained
   tutorials on various topics for the developer community.
 baseurl: ""
-url: "https://genicsblog.com"
+url: ""
 permalink: /:title
 twitter_username: "genicsblog"
 github_username: "genicsblog"
