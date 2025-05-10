@@ -1,9 +1,31 @@
 ---
 layout: default
 ---
-
-<article class="elevated md:text-lg m-8 md:m-10 p-6 md:p-8 lg:mx-auto lg:max-w-[80%] 2xl:max-w-screen-xl">{{ content | extlinks | optimize_images }}</article>
-
-{% if page.showlatest %}
-<div class="m-8 md:m-10 lg:m-14">{% include latestposts.html %}</div>
+{% if page.image %}
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="image-box">
+        <img class="page-image" src="{{site.baseurl}}{{page.image}}" alt="{{page.title}}">
+      </div>
+    </div>
+  </div>
+</div>
 {% endif %}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-8 push-2 col-d-10 col-m-12 push-d-1 push-m-0">
+      <!-- begin page -->
+      <article class="page animate">
+        <div class="page-head">
+          <h1 class="page-title">{{ page.title | escape }}</h1>
+        </div>
+        <div class="page__content">
+          {{ content }}
+        </div>
+      </article>
+      <!-- end page -->
+    </div>
+  </div>
+</div>

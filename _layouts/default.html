@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% include headtags.html %}
-    <title>{{ page.title }}</title>
-  </head>
 
-  <body>
-    <!-- prettier-ignore -->
-    {% include_cached nav.html url=page.url %}
-    {% include header.html %}
+{% include head.html %}
 
-    <main>{{ content | extlinks }}</main>
+<body>
+  {% if site.google-analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
 
-    <!-- prettier-ignore -->
-    {% include footer.html %}
-    {% include search.html %}
-    {% include scripts.html %}
-  </body>
+  {% include header.html %}
+
+  <!-- begin content -->
+  <main class="content" aria-label="Content">
+    {{ content }}
+  </main>
+  <!-- end content -->
+
+  <div class="top" title="Top"><i class="fa-solid fa-arrow-up"></i></div>
+  {% include footer.html %}
+  {% include javascripts.html %}
+</body>
+
 </html>

@@ -1,37 +1,46 @@
 ---
-layout: page
-title: "About us"
+title: About
 permalink: /about
+description: What are Bike Buses? Who are Bike Bus PDX?
+image: /assets/images/contact.png
+layout: page
 ---
 
-Genics Blog is an [open source platform](https://github.com/genicsblog) for developers to share technical knowledge. You will generally find us posting high quality relevant content in the niche of software development or programming in general.
+BikeBusPDX aims to promote biking as a healthy and eco-friendly commuting option for school children.
+The program organizes groups of kids to ride their bikes together to school on a weekly basis.
+By fostering camaraderie and providing a sense of security, the Bike Bus encourages kids to embrace cycling as a fun and social activity.
+This initiative not only reduces traffic congestion and carbon emissions,
+but also instills a lifelong habit of active transportation in young individuals.
 
-We post two types of content:
+# History of the Bike Bus (Bike Train)
 
-- **Original content** that is written by us or by the developers who submit their original content to us.
-- **Cross posts** that constitute relevant articles from other sources, submitted by the authors. **We post this only on the discrete permission of the author.** 
+The current incarnation of the Bike Bus is not Portland's first! That honor goes to the **Bike Train** movement from 2010.
 
-> Fun fact: We are a team of high schooler teenagers passionate about programming :P
+> [Biketrainpdx.org](http://www.biketrainpdx.org) was started by Kiel Johnson in 2010 as a way to create a citywide community for bike trains. After graduating from college and unable to find a job doing what he wanted to do Kiel decided to just go out and do it. So in 2009, Kiel helped organize a bike train from Beach School which proved very successful. Using that as a model Kiel tried to spread bike trains to schools throughout Portland. The goal was to have a bike train running at every single school in Portland.
+>
+> — biketrainpdx.org
 
-Perks of writing at Genics Blog:
+Here are some press articles about the original Bike Train:
 
-- Articles are shared within our community on discord and on twitter for a wider reach. You get special recognition on our discord server for your contributions.
-- You get access to an inclusive community of passionate developers, with whom you can learn and grow.
-- Your articles remain your own, so you can publish them at your own blog or website. The only limitation is for original content, please add a canonical link back to us. Otherwise it harms both your website and ours as well.
-- Original content is eligible to get 2 quality backlinks to preferred website that will help in organic rankings of your own content.
+- [Oregon Live](https://www.oregonlive.com/portland/2010/10/bike_trains_help_kids_get_to_s.html)
+- [Bike trains take off: Six schools on board, national TV, and more! — Bike Portland](https://bikeportland.org/2010/09/14/bike-trains-take-off-six-schools-on-board-national-tv-and-more-39411)
+- [At Beach School, biking and walking makes a stronger community — Bike Portland](https://bikeportland.org/2010/09/13/at-beach-elementary-biking-and-walking-makes-a-stronger-community-39255)
+- [Once prohibited, biking now a big part of Beach School — Bike Portland](https://bikeportland.org/2010/06/01/once-prohibited-biking-now-a-big-part-of-beach-school-34222)
+- [Local Schools Get On Board the Bike Train](https://web.archive.org/web/20110206165309/http://www.bicyclepaper.com/articles/2010/11/local_schools_get_on_board_the_bike_train)
 
-We have an active community of developers and content writes on our [Discord server](https://discord.genicsblog.com) and [Twitter page](https://twitter.com/genicsblog). Being open source, the codebase on GitHub is actively maintained by community contributions.
+# Bike Buses Today
 
-## The team
+The current Bike Bus movement in Portland was started by [Sam Balto on Earth Day 2022 at Alameda Elementary](https://bikeportland.org/2022/04/22/portlands-bike-bus-for-earth-day-nets-huge-turnout-in-alameda-neighborhood-video-352657). It was part of a trend of Bike Buses sprouting up throughout North America and Europe. Since then, Sam has started running the non-profit [Bike Bus World](https://bikebus.world) to evangelize and support Bike Buses everywhere.
 
-We are a team of high school developers and bloggers who are building a community of technical writers. For an individual writer it's hard to get their content a wider reach but we believe together we can make a difference.
+There are Bike Buses at almost two dozen Portland schools, led primarily by parent volunteers. Our Bike and Walking Buses were awarded $2.1m in grants from
+the [Portland Clean Energy Fund](https://bikeportland.org/2024/10/31/walking-school-buses-poised-for-growth-thanks-to-pcef-grant-391014) and the [Federal government](https://bikeportland.org/2024/11/15/bike-and-walking-school-buses-win-big-with-federal-grant-for-north-portland-391343) to grow existing success and open new frontiers.
 
-We believe in the power of open source so everything on Genics Blog ranging from the [website](https://github.com/genicsblog/genicsblog.com) to the [comments](https://github.com/genicsblog/comments), and from the [API](https://github.com/eduardoboucas/staticman) we use, to the [discord bot](https://github.com/genicsblog/genics-bot) for our community is open source!
+# Bike Bus Research
 
-## Getting started with technical writing / programming?
+There are a handful of papers specifically about Bike Buses- please email ride@bikebuspdx.org if you think anything should be added here:
 
-Our community is here to help!
+- [Global Survey of Bike Bus Initiatives](https://bikeportland.org/2024/01/16/bike-buses-are-routes-to-activism-says-first-global-survey-383175) from City Lab Barcelona
+- [Exploring Bike Bus Programs in the United States](https://trec.pdx.edu/news/bike-bus-project-research-explores-active-transportation-school) from PSU TREC
+- [Bike Buses: An Evaluation of An Emerging Active Transportation to School Intervention](https://trec.pdx.edu/events/professional-development/psu-transportation-seminar-10252024) from PSU TREC
 
-[Join us](https://discord.genicsblog.com) on discord to get help from experienced technical writers and professional developers. We also help in coming up with article ideas and getting consistent organic traffic with [SEO](/category/seo/).
-
-To become a writer at Genics Blog, please head to our [documentation](https://docs.genicsblog.com). [Learn more >](https://docs.genicsblog.com/author/create-a-submission-request#cross-posting)
+If you're interested in learning more about Bike Buses, or starting your own, check out [bikebus.world](https://bikebus.world) or [how to start a Bike Bus](/starting-a-bike-bus).

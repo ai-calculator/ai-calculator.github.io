@@ -1,33 +1,28 @@
-# [genicsblog.com](https://genicsblog.com)
+# Bike Bus PDX
 
-Theme files for genicsblog.com
+Run `make run-local` to run the site through Docker.
+This means you need Docker, but you don't need to worry about Ruby.
 
-**This is not a proper Jekyll theme**. This repo contains only the theme files that genicsblog.com's repo retrevies at GitHub action's runtime to build the site.
+Open a browser to <http://localhost:22030> (you can remember the port because of the 2030 Bike Plan).
 
-[![Powered by Vercel](https://genicsblog.com/assets/images/sponsors/vercel.svg)](https://vercel.com?utm_source=genicsblog&utm_campaign=oss)
+Otherwise, this is a pretty normal Jekyll site- new blog posts in `_posts`, etc.
 
-## Local setup
+## Bike Bus Mini-Sites
 
-Please install [Ruby](https://www.ruby-lang.org/en/downloads/) (preferrably 3.x) and [Node.js](https://nodejs.org/en/download/) (preferrably 16.x) before you proceed.
+There is a `_data/buses.yml` file which contains the data that drives bike bus mini-sites
+and the 'find your bike bus' list.
 
-Run the `dev.sh` script in order to set up the local environment and build the website:
+Check out that file to see the supported fields.
 
-```shell
-./dev.sh
-```
+Each bus gets a site at `/<slug>`. So the Alameda Bike Bus site is at `/alameda`.
 
-The first build would take a few moments. Once done, you can preview the site at [localhost:4000](http://localhost:4000). Subsequent builds should be faster.
+The code for this is in `_plugins/bus_site_generator.rb`.
 
-If any problem persists, try providing the correct permissions to the bash script by running:
+## Original Theme
 
-```shell
-chmod +x dev.sh
-```
+This site originally used the Aditu theme. It's been customized heavily but referring to the original
+can be helpful.
 
-Now you should be able to run the `./dev.sh` command.
+Its docs are in the `aditu-jekyll-theme-v1.2` folder.
 
-Feel free to [open an issue](https://github.com/genicsblog/theme-files/issues/new) if you need any help!
-
-## [License](https://github.com/genicsblog/theme-files/blob/main/LICENSE.md)
-
-The project is licensed under the [MIT](https://github.com/genicsblog/theme-files/blob/main/LICENSE.md) license terms and expects you to preserve the attribution to the developer and contributors in the website footer on each page.
+Check out a [demo](https://aditu.netlify.com/).

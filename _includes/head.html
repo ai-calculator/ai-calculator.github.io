@@ -1,0 +1,32 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name='description' content='{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicon-16x16.png">
+  <link rel="manifest" href="{{ site.baseurl }}/assets/site.webmanifest">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,600%7CPoppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome solid and brands are needed -->
+  <link href="{{ site.baseurl }}/assets/fontawesome-6.5.1/css/fontawesome.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/fontawesome-6.5.1/css/brands.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/assets/fontawesome-6.5.1/css/solid.css" rel="stylesheet">
+
+  <style>
+  {% capture include_to_scssify %}
+    {% include main.scss %}
+  {% endcapture %}
+  {{ include_to_scssify | scssify }}
+  </style>
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/custom.css">
+</head>

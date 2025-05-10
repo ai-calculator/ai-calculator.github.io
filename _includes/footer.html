@@ -1,120 +1,64 @@
-<footer class="px-12 py-8 text-center">
-  <div class="flex justify-center">
-    <a
-      aria-label="Genics Blog's Discord server"
-      class="mr-2 underline-none hover:scale-125 transition"
-      href="https://discord.genicsblog.com"
-      target="_blank"
-    >
-      <img
-        alt="Discord's logo"
-        src="{{ site.baseurl }}/assets/images/social/discord.svg"
-        class="social-image w-8 h-8"
-      />
-    </a>
-
-    <a
-      aria-label="Genics Blog's GitHub organization"
-      class="mx-4 underline-none hover:scale-125 transition"
-      href="https://github.com/{{ site.github_username }}"
-      target="_blank"
-      rel="nofollow noopener noreferrer"
-    >
-      <img
-        alt="GitHub's logo"
-        src="{{ site.baseurl }}/assets/images/social/github.svg"
-        class="social-image w-8 h-8"
-      />
-    </a>
-
-    <a
-      aria-label="Genics Blog's Twitter page"
-      class="ml-2 underline-none hover:scale-125 transition"
-      href="https://twitter.com/{{ site.twitter_username }}"
-      target="_blank"
-      rel="nofollow noopener noreferrer"
-    >
-      <img
-        alt="Twitter's logo"
-        src="{{ site.baseurl }}/assets/images/social/twitter.svg"
-        class="social-image w-8 h-8"
-      />
-    </a>
+<!-- begin footer-widgets -->
+<section class="footer-widgets">
+  <div class="container">
+    <div class="row">
+      <div class="col col-4 col-d-6 col-t-12">
+        <div class="widget widget-info">
+          <div class="footer-logo">
+          {% if site.logo %}
+            <img class="logo__image" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.title }}">
+            {{site.title}}
+          {% else %}
+            {{site.title}}
+          {% endif %}
+          </div>
+          <p class="footer-desc">{{site.hero.description}}</p>
+        </div>
+      </div>
+      <div class="col col-4 col-d-6 col-t-12">
+        <div class="widget widget-nav">
+          <div class="widget__head">
+            <h3 class="widget__title">Menu</h3>
+          </div>
+          {%include navigation.html%}
+        </div>
+      </div>
+      {% if site.mailchimp %}
+      <div class="col col-4 col-d-6 col-t-12">
+        <div class="widget widget-subscribe">
+          <div class="widget__head">
+            <h3 class="widget__title">Get Interesting News</h3>
+          </div>
+          <p class="subscribe-subtitle">Subscribe to our newsletter and we’ll send you the emails of latest posts.</p>
+          <form class="subscribe-form validate" action="{% if site.mailchimp-identifier %}//{{site.mailchimp-identifier}}{% else %}#{% endif %}"
+            method="POST" id="membedded-subscribe-form" name="membedded-subscribe-form" target="_blank" novalidate>
+            <div class="subscribe-group">
+              <div class="subscribe-group-top">
+                <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
+                <input class="subscribe-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="Email Address">
+                <button class="subscribe-button button button--primary" id="membedded-subscribe" type="submit" name="subscribe">Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      {% endif %}
+    </div>
   </div>
+</section>
+<!-- end footer-widgets -->
 
-  <br />
-
-  © 2021 <a href="{{ site.baseurl }}/">{{ site.title }}</a>
-
-  <br />
-
-  Built with
-  <a
-    href="https://jekyllrb.com"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-    >Jekyll</a
-  >. Hosted on
-  <a
-    href="https://github.com"
-    target="_blank"
-    rel="nofollow noopener noreferrer"
-    >GitHub</a
-  >.
-
-  <br /><br />
-
-  Developed by
-  <a
-    href="https://github.com/gouravkhunger"
-    rel="nofollow noopener noreferrer"
-    target="_blank"
-  >
-    Gourav Khunger</a
-  >. Thanks to the
-  <a
-    href="https://github.com/{{ site.github_repo }}/graphs/contributors"
-    rel="nofollow noopener noreferrer"
-    target="_blank"
-  >
-    contributors</a
-  >!
-
-  <br /><br />
-
-  <a
-    class="nav-item {% if page.url contains '/terms' %}text-slate-400{% else %}text-white{% endif %}"
-    href="{{ site.baseurl }}/terms"
-    >T&C</a
-  >
-
-  <a
-    class="nav-item {% if page.url contains '/privacy-policy' %}text-slate-400{% else %}text-white{% endif %}"
-    href="{{ site.baseurl }}/privacy-policy"
-    >Privacy Policy</a
-  >
-
-  <a
-    class="nav-item {% if page.url contains '/licensing' %}text-slate-400{% else %}text-white{% endif %}"
-    href="{{ site.baseurl }}/licensing"
-    >Licensing</a
-  >
-
-  {% if jekyll.environment != 'production' %}
-  <br /><br />
-
-  <div class="flex justify-center">
-    <a
-      aria-label="Go to Vercel"
-      href="https://vercel.com?utm_source=genicsblog&utm_campaign=oss"
-      target="_blank"
-      class="underline-none"
-    >
-      <img
-        alt="Powered by Vercel"
-        src="{{ site.baseurl }}/assets/images/sponsors/vercel.svg"
-      />
-    </a>
+<!-- begin footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12 col-d-10 push-d-1 col-m-12 push-m-0">
+      <div class="footer__inner">
+        {% include social-links.html %}
+        <div class="copyright">{{site.time | date: '%Y'}} &copy; <a href="/"><strong>{{site.title}}</strong></a>. Built with 🚲❤️.</div>
+        </div>
+      </div>
+    </div>
   </div>
-  {% endif %}
 </footer>
+<!-- end footer -->

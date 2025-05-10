@@ -1,0 +1,57 @@
+// *****************
+// Global Variables
+// *****************
+
+// Spaces
+$base-spacing-unit: 20px;
+
+// Transition
+$global-transition: all .2s;
+
+
+// *****************
+// Color Variables
+// *****************
+$pdx-blue: rgb(62, 132, 214);
+$pdx-green: rgb(16, 95, 50);
+$pdx-yellow: rgb(252, 177, 52);
+
+$brand-color: $pdx-yellow;
+$dark: lighten($pdx-green, 30%);
+$blue-dark: $pdx-yellow;
+$gray: #757575;
+$light-gray: #c6c6c6;
+$black: #101113;
+$white: #fff;
+$header-color: $pdx-blue;
+
+// Body Color
+$text-color: $black;
+
+// Background Colors
+$background-color: $white;
+
+
+// *****************
+// Typography
+// *****************
+$base-font-size: 18px;
+$base-font-style: normal;
+$base-font-variant: normal;
+$base-font-weight: normal;
+$base-font-family: 'Josefin Sans', sans-serif;
+$base-line-height: 1.7;
+
+// Headings
+$heading-font-weight: 700;
+$heading-font-family: 'Poppins', Arial, sans-serif;
+$heading-color: $text-color;
+
+$font-size-h1:  36px;
+$font-size-h2:  28px;
+$font-size-h3:  24px;
+$font-size-h4:  20px;
+$font-size-h5:  18px;
+$font-size-h6:  16px;
+
+$heading-line-height: 1.4em;

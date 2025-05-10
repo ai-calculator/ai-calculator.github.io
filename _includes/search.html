@@ -1,44 +1,18 @@
-<div
-  class="hidden fixed top-0 w-full h-full p-6 md:p-14 backdrop-blur-md cursor-pointer z-20"
-  id="search-container"
->
-  <div
-    class="p-4 bg-white dark:bg-slate-800 mx-auto w-full max-h-full sm:w-3/4 lg:w-1/2 content-center rounded-lg shadow-md shadow-slate-200 dark:shadow-none cursor-auto overflow-auto"
-    id="search-box"
-  >
-    <div class="flex items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 stroke-slate-400"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-        />
-      </svg>
-
-      <input
-        type="text"
-        class="w-full h-full pl-4 text-2xl outline-none dark:bg-slate-800"
-        id="search-input"
-        placeholder="Search..."
-      />
-
-      <span
-        class="hidden lg:block text-sm text-gray-600 text-right tracking-tight ml-2"
-      >
-        <kbd
-          class="bg-gray-200 dark:bg-slate-600 dark:text-gray-200 rounded-md shadow-sm py-1 px-2"
-          >Esc</kbd
-        >
-      </span>
+<div class="search">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="search__box">
+          <div class="search__group">
+            <div class="search__close">
+              <i class="fa-solid fa-x"></i>
+            </div>
+            <label for="js-search-input" class="screen-reader-text">Search for Blog</label>
+            <input type="text" id="js-search-input" class="search__text" autocomplete="off" placeholder="Type to search...">
+          </div>
+          <div id="js-results-container" class="search-results-list"></div>
+        </div>
+      </div>
     </div>
-
-    <div id="results-container"></div>
   </div>
 </div>
