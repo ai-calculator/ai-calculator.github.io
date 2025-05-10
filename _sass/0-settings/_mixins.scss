@@ -24,10 +24,3 @@
   width: 1px;
   word-wrap: normal !important;
 }
-
-@mixin undecorated-link() {
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-}

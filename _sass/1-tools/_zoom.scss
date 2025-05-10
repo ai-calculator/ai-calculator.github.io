@@ -18,7 +18,7 @@ img.zoom-img {
 }
 .zoom-overlay {
   z-index: 420;
-  background: $background-color;
+  background: $background-color-alt;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,11 +29,6 @@ img.zoom-img {
   -webkit-transition:      opacity 300ms;
        -o-transition:      opacity 300ms;
           transition:      opacity 300ms;
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-    backdrop-filter: saturate(180%) blur(10px);
-    background: rgba($background-color, .8);
-  }
 }
 .zoom-overlay-open .zoom-overlay {
   opacity: 1;
