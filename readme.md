@@ -1,50 +1,33 @@
-# Parsa Jekyll
+# [genicsblog.com](https://genicsblog.com)
 
-Parsa jekyll Creative blog Template ported from [Parsa HTML Template](https://themefisher.com/products/parsa)
+Theme files for genicsblog.com
 
-## Setup
+**This is not a proper Jekyll theme**. This repo contains only the theme files that genicsblog.com's repo retrevies at GitHub action's runtime to build the site.
 
-To start your project, fork this repository
-After forking the repo, your site will be live immediately on your personal Github Pages account, e.g. `https://yourusername.github.io/your-repo-name/`.
+[![Powered by Vercel](https://genicsblog.com/assets/images/sponsors/vercel.svg)](https://vercel.com?utm_source=genicsblog&utm_campaign=oss)
 
-Make sure GitHub Pages is enabled for your repo. It might take some time for the site to propagate entirely.
+## Local setup
 
-## Customize
+Please install [Ruby](https://www.ruby-lang.org/en/downloads/) (preferrably 3.x) and [Node.js](https://nodejs.org/en/download/) (preferrably 16.x) before you proceed.
 
-Things you can customize in `_data/settings.yml` (no HTML/CSS):
+Run the `dev.sh` script in order to set up the local environment and build the website:
 
-- Theme General Settings ( name, logo, email, phone, address )
-- Hero Section
-- About Section
-- Team Section
-- Skills Section
-- Exprerience Section
-- Education Section
-- Services Section
-- Portfolio Section
-- Testimonials Section
-- Client Slider Section
-- Contact Section
+```shell
+./dev.sh
+```
 
-## Deployment
+The first build would take a few moments. Once done, you can preview the site at [localhost:4000](http://localhost:4000). Subsequent builds should be faster.
 
-To run the theme locally, navigate to the theme directory and run `bundle install` to install the dependencies, then run `jekyll serve` or `bundle exec jekyll serve` to start the Jekyll server.
-I would recommend checking the [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+If any problem persists, try providing the correct permissions to the bash script by running:
 
-## Reporting Issues
+```shell
+chmod +x dev.sh
+```
 
-We use GitHub Issues as the official bug tracker for the **Parsa Theme**. Please Search [existing issues](https://github.com/themefisher/parsa-jekyll/issues). It’s possible someone has already reported the same problem.
-If your problem or idea is not addressed yet, [open a new issue](https://github.com/themefisher/parsa-jekyll/issues/new)
+Now you should be able to run the `./dev.sh` command.
 
-## Technical Support or Questions
+Feel free to [open an issue](https://github.com/genicsblog/theme-files/issues/new) if you need any help!
 
-If you have questions or need help integrating the product please [contact us](mailto:themefisher@gmail.com) instead of opening an issue.
+## [License](https://github.com/genicsblog/theme-files/blob/main/LICENSE.md)
 
-<!-- licence -->
-## License
-
-Copyright (c) 2016 - Present, Designed & Developed by [Themefisher](https://themefisher.com)
-
-**Code License:** Released under the [MIT](https://github.com/themefisher/parsa-jekyll/blob/main/LICENSE) license.
-
-**Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
+The project is licensed under the [MIT](https://github.com/genicsblog/theme-files/blob/main/LICENSE.md) license terms and expects you to preserve the attribution to the developer and contributors in the website footer on each page.

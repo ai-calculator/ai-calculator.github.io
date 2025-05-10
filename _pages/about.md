@@ -1,15 +1,37 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
-image: /assets/images/author.jpg
+title: "About us"
+permalink: /about
 ---
-<h3 class="font-weight-light">Hello, I’m <span class="font-weight-bold">{{site.author.name}}</span></h3>
 
-Creative UI/UX desingerr how loves to craft beautiful that satisfy users needs the product. A best idea generate for the agency complay smart and elegant design When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me.
+Genics Blog is an [open source platform](https://github.com/genicsblog) for developers to share technical knowledge. You will generally find us posting high quality relevant content in the niche of software development or programming in general.
 
-I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains.
+We post two types of content:
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem deserunt tempora doloribus non, voluptas dolor? Consequuntur et ad officiis iste, vero natus possimus labore veritatis a eius doloremque. Optio amet quis harum nulla vitae repellat officiis veniam accusamus error hic deleniti in, quas est illum cum natus neque possimus delectus dolore ipsam. Pariatur, ad molestias alias voluptas iusto quam debitis beatae sint similique velit, dicta eos dolorum cumque mollitia officia iure labore voluptatibus. Non at sequi, natus dolores, cum accusamus repudiandae hic blanditiis ipsum possimus qui assumenda quaerat optio ab molestias ipsa iste molestiae dignissimos. Reprehenderit quod totam nostrum nihil.
+- **Original content** that is written by us or by the developers who submit their original content to us.
+- **Cross posts** that constitute relevant articles from other sources, submitted by the authors. **We post this only on the discrete permission of the author.** 
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem deserunt tempora doloribus non, voluptas dolor? Consequuntur et ad officiis iste, vero natus possimus labore veritatis a eius doloremque. Optio amet quis harum nulla vitae repellat officiis veniam accusamus error hic deleniti in, quas est illum cum natus neque possimus delectus dolore ipsam. Pariatur, ad molestias alias voluptas iusto quam debitis beatae sint similique velit, dicta eos dolorum cumque mollitia officia iure labore voluptatibus. Non at sequi, natus dolores, cum accusamus repudiandae hic blanditiis ipsum possimus qui assumenda quaerat optio ab molestias ipsa iste molestiae dignissimos. Reprehenderit quod totam nostrum nihil.
+> Fun fact: We are a team of high schooler teenagers passionate about programming :P
+
+Perks of writing at Genics Blog:
+
+- Articles are shared within our community on discord and on twitter for a wider reach. You get special recognition on our discord server for your contributions.
+- You get access to an inclusive community of passionate developers, with whom you can learn and grow.
+- Your articles remain your own, so you can publish them at your own blog or website. The only limitation is for original content, please add a canonical link back to us. Otherwise it harms both your website and ours as well.
+- Original content is eligible to get 2 quality backlinks to preferred website that will help in organic rankings of your own content.
+
+We have an active community of developers and content writes on our [Discord server](https://discord.genicsblog.com) and [Twitter page](https://twitter.com/genicsblog). Being open source, the codebase on GitHub is actively maintained by community contributions.
+
+## The team
+
+We are a team of high school developers and bloggers who are building a community of technical writers. For an individual writer it's hard to get their content a wider reach but we believe together we can make a difference.
+
+We believe in the power of open source so everything on Genics Blog ranging from the [website](https://github.com/genicsblog/genicsblog.com) to the [comments](https://github.com/genicsblog/comments), and from the [API](https://github.com/eduardoboucas/staticman) we use, to the [discord bot](https://github.com/genicsblog/genics-bot) for our community is open source!
+
+## Getting started with technical writing / programming?
+
+Our community is here to help!
+
+[Join us](https://discord.genicsblog.com) on discord to get help from experienced technical writers and professional developers. We also help in coming up with article ideas and getting consistent organic traffic with [SEO](/category/seo/).
+
+To become a writer at Genics Blog, please head to our [documentation](https://docs.genicsblog.com). [Learn more >](https://docs.genicsblog.com/author/create-a-submission-request#cross-posting)

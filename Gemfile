@@ -1,11 +1,23 @@
-source 'https://rubygems.org'
-gem "bundler"
-gem "jekyll"
-gem "jekyll-paginate"
-gem 'jekyll-tagging'
-gem "jekyll-sitemap"
-gem 'jekyll-archives'
-gem 'wdm', '>= 0.1.0'
-gem "kramdown", ">= 2.3.0"
+source "https://rubygems.org"
 
-gem "webrick", "~> 1.7"
+gem "jekyll"
+
+group :jekyll_plugins do
+  gem "jemoji"
+  gem "jekyll-postcss"
+  gem "jekyll-minifier"
+  gem "jekyll-archives"
+  gem "jekyll-hostname"
+  gem "jekyll-paginate-v2"
+  gem "jekyll-loading-lazy"
+  gem "jekyll-redirect-from"
+  gem "jekyll-auto-authors"
+  gem "jekyll-url-metadata"
+  gem "jekyll-include-cache"
+end
+
+# Performance-booster for watching directories on Windows
+gem "wdm", :platforms => [:mingw, :x64_mingw, :mswin]
+
+gem "dotenv"
+gem "webrick"

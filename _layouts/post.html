@@ -1,39 +1,321 @@
 ---
 layout: default
 ---
-<!-- page-title -->
-<section class="section bg-secondary">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h4>{{ page.title | escape }}</h4>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- /page-title -->
 
-<!-- blog single -->
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8">
-				<ul class="list-inline d-flex justify-content-between py-3">
-					<li class="list-inline-item"><i class="ti-user mr-2"></i>Post by {{site.author.name}}</li>
-					<li class="list-inline-item"><i class="ti-calendar mr-2"></i>{{page.date | date: '%b %d, %Y'}}</li>
-				</ul>
-				{% if page.image %}
-				<img src="{{page.image | relative_url}}" alt="{{page.title}}" class="w-100 img-fluid mb-4">
-				{% endif %}
-				<div class="content">
-					{{ content }}
-				</div>
-				{% if site.disqus-identifier %}
-				{% include disqus-comments.html %}
-				{% endif %}
-			</div>
-			{% include sidebar.html %}
-		</div>
-	</div>
+<!-- prettier-ignore -->
+{% assign author = site.data.authors[page.author] %}
+{% if jekyll.environment == 'production' %}
+  {% assign optimizeAvatar = site.img_src_prefix.avatar %}
+{% endif %}
+{%- capture hasNotice -%}
+{%- if page.notice != blank or page.original != blank or page.series != blank -%}true{%- endif -%}
+{%- endcapture -%}
+
+<!-- prettier-ignore -->
+{% include_cached infeed-ad.html environment=jekyll.environment sitemap=page.sitemap %}
+
+<section class="lg:flex lg:justify-center lg:max-w-screen-2xl lg:mx-auto">
+  <div class="content-area elevated">
+    {% if site.sponsor-notice %}
+    <div
+      style="background-color: {{ site.sponsor-notice.color }}"
+      class="notice{% if hasNotice == 'true' %} -mb-4 pt-4 pb-7{% else %} py-4{% endif %}"
+    >
+      {{ site.sponsor-notice.html }}
+    </div>
+    {% endif %}
+    <!-- prettier-ignore -->
+    {% if hasNotice == "true" %}
+    <div class="py-2 notice">
+      <!-- prettier-ignore -->
+      {% if page.original != blank %}
+      {% assign host = page.original | hostname %}
+      <span class="italic leading-8">
+        Originally published at
+        <a
+          href="{{ page.original }}"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+          >{{ host }}</a
+        >.
+      </span>
+      {% endif %}
+
+      <!-- prettier-ignore -->
+      {% if page.series %}
+      <span class="leading-8">
+        This post is a part of the series
+        <a href="{{ site.baseurl }}/series/{{ page.series }}" target="_blank">
+          {{ page.series | split:"-" | join:" " | capitalize_all }}
+        </a>
+      </span>
+      {% endif %}
+
+      <!-- prettier-ignore -->
+      {% if page.notice != blank %}
+      {% if page.series != blank %}<br />{% endif %}
+      <span class="leading-8">
+        {{ page.notice | markdownify }}
+      </span>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <article class="p-6 md:p-8">
+      {% if page.audioId != blank and jekyll.environment == "production" %}
+      <div
+        class="mb-6"
+        id="audio-player"
+        data-audio-id="{{ page.audioId }}"
+      ></div>
+      <script>
+        if (window.BeyondWords) {
+          BeyondWords.Player.destroyAll();
+        }
+      </script>
+      {% endif %}
+
+      <!-- prettier-ignore -->
+      {% assign article = content | extlinks | optimize_images %}
+      {% if page.disableAudioPFP == true %}
+        {{ article }}
+      {% else %}
+        {{ article | mark_segments: page.audioId }}
+      {% endif %}
+    </article>
+
+    <hr />
+
+    <div
+      class="px-6 pb-6 md:px-8 md:pb-8 flex flex-col items-center rounded-bl-2xl rounded-br-2xl"
+    >
+      {% if jekyll.environment == "production" %}
+      <div id="custom-substack-embed" class="mb-4"></div>
+      {% endif %}
+
+      <p class="text-center mb-4">
+        Join discussions at
+        <a
+          href="https://discord.genicsblog.com"
+          target="_blank"
+          class="cta-link"
+        >
+          our discord server &gt;
+        </a>
+
+        <br />
+
+        Did you learn something new? Add a comment below and spread the word!
+      </p>
+
+      <div class="grid grid-flow-col gap-6">
+        <a
+          class="social-link underline-none"
+          rel="nofollow noopener noreferrer"
+          href="https://facebook.com/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+          onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;"
+          target="_blank"
+        >
+          <img
+            src="{{ site.baseurl }}/assets/images/social/facebook.svg"
+            class="social-image w-8 h-8"
+          />
+        </a>
+
+        <a
+          class="social-link underline-none"
+          rel="nofollow noopener noreferrer"
+          href="https://api.whatsapp.com/send?text=Checkout this amazing article at Genics Blog '{{ page.title }}': {{ site.url }}{{ site.baseurl }}{{ page.url }}"
+          onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=435');return false;"
+          target="_blank"
+        >
+          <img
+            src="{{ site.baseurl }}/assets/images/social/whatsapp.svg"
+            class="social-image w-10 h-10"
+          />
+        </a>
+
+        <a
+          class="social-link underline-none"
+          rel="nofollow noopener noreferrer"
+          href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+          onclick="window.open(this.href, 'linkedin-share', 'width=550,height=435');return false;"
+          target="_blank"
+        >
+          <img
+            src="{{ site.baseurl }}/assets/images/social/linkedin.svg"
+            class="social-image w-7 h-7"
+          />
+        </a>
+
+        <!-- prettier-ignore -->
+        {% assign mention = author.links.twitter %}
+        {% if mention != blank %}
+        {% assign text = "by @" | append: mention | append: " " %}
+        {% else %}
+        {% assign text = "" %}
+        {% endif %}
+        <a
+          class="social-link underline-none"
+          rel="nofollow noopener noreferrer"
+          href="https://twitter.com/intent/tweet?text=Check out this amazing article {{ text }}at @genicsblog: {{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;"
+        >
+          <img
+            src="{{ site.baseurl }}/assets/images/social/twitter.svg"
+            class="social-image w-8 h-8"
+          />
+        </a>
+
+        <a
+          class="social-link underline-none"
+          rel="nofollow noopener noreferrer"
+          href="https://www.snapchat.com/scan?attachmentUrl={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+          onclick="window.open(this.href, 'snapchat-share', 'width=550,height=435');return false;"
+        >
+          <img
+            src="{{ site.baseurl }}/assets/images/social/snapchat.svg"
+            class="social-image w-14 h-14 -m-2"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <aside class="sidebar-area">
+    <figure class="p-6 md:p-8 elevated">
+      <a
+        class="underline-none" 
+        href="{{ site.baseurl }}/author/{{ page.author | downcase }}/"
+      >
+        <img
+          class="w-24 h-24 rounded-full mx-auto"
+          src="{{ optimizeAvatar }}{{ author.avatar }}"
+          alt="{{ author.name }}"
+        />
+      </a>
+
+      <div class="pt-4 space-y-4">
+        <figcaption class="font-medium text-center">
+          <div>
+            <a
+              href="{{ site.baseurl }}/author/{{ page.author | downcase }}/"
+              class="text-xl font-bold"
+            >
+              {{ author.name }}
+            </a>
+          </div>
+
+          <div class="text-slate-700 dark:text-slate-200 text-sm">
+            {{ author.role }}
+          </div>
+        </figcaption>
+
+        {% if author.birthdate %}
+          {% assign bio = author | format_bio %}
+        {% else %}
+          {% assign bio = author.bio %}
+        {% endif %}
+        <p class="leading-5 font-medium text-justify">{{ bio }}</p>
+      </div>
+    </figure>
+
+    {% if page.sitemap == false %}
+    <figure class="p-6 md:p-8 lg:sticky lg:top-24 mt-8 elevated">
+      <h4>This is a draft preview!</h4>
+
+      Anyone with the link can read this draft, but not search engines :)
+      <br /><br />
+      Wanna publish content at Genics Blog?
+
+      <div class="flex justify-center">
+        <a
+          class="px-3 py-1 mt-4 linkbtn underline-none"
+          href="https://docs.genicsblog.com/author"
+        >
+          Become an Author &gt;
+        </a>
+      </div>
+    </figure>
+    {% else %}
+    <div class="adverts-container">
+      <figure class="advert elevated">
+        {% if jekyll.environment != 'production' %}
+        <p>This is an adslot that will be visible in production website.</p>
+        <!-- prettier-ignore -->
+        {% else %}
+        {% include_cached display-ad.html environment=jekyll.environment sitemap=page.sitemap %}
+        {% endif %}
+      </figure>
+
+      {% for element in site.data.sponsors %}
+      <figure
+        class="sponsor elevated{% if forloop.last == true %} lg:sticky lg:top-24{% endif %}"
+      >
+        {% if element.customHtml %}
+          {{ element.customHtml }}
+        {% else %}
+        <img
+          src="{{ element.logo.dark }}"
+          class="logo hidden dark:block"
+        />
+
+        <img
+          src="{{ element.logo.light }}"
+          class="logo dark:hidden"
+        />
+
+        <h4 class="mt-4">
+          {{ element.name }} {% if element.sponsored %}<span
+            class="text-xs text-white px-3 py-1 align-middle rounded-xl bg-primary"
+            >Sponsored</span
+          >{% endif %}
+        </h4>
+
+        <p>{{ element.description }}</p>
+
+        <div class="flex justify-center">
+          <a
+            class="px-3 py-1 mt-4 linkbtn underline-none"
+            href="{{ element.site }}"
+            rel="nofollow"
+            target="_blank"
+          >
+            Check it out &gt;
+          </a>
+        </div>
+        {% endif %}
+      </figure>
+      <!-- prettier-ignore -->
+      {% endfor %}
+    </div>
+    {% endif %}
+  </aside>
 </section>
-<!-- /blog single -->
+
+<!-- prettier-ignore -->
+{% include_cached infeed-ad.html environment=jekyll.environment sitemap=page.sitemap %}
+<br />  
+{% include_cached cta.html %}
+
+{% if jekyll.environment == 'production' and page.comments != false and page.sitemap != false %}
+<h1 class="mt-12 mx-6 lg:mx-10 xl:mx-14">Comments</h1>
+
+<section class="lg:flex lg:justify-center">
+  <div id="comments" class="content-area"></div>
+
+  <aside class="sidebar-area">
+    <div
+      class="p-6 space-y-4 lg:sticky lg:top-24 elevated"
+    >
+      <p class="leading-5 font-medium text-justify">
+        Please adhere to our
+        <a href="/code-of-conduct">Code of Conduct</a> while adding a comment.
+        Respect other's opinion.
+      </p>
+    </div>
+  </aside>
+</section>
+{% endif %}
+
+<div class="m-8 md:m-10 lg:m-14">{% include relatedposts.html %}</div>

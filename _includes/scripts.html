@@ -1,0 +1,108 @@
+<script src="{{ site.baseurl }}/assets/js/theme.js" data-no-instant></script>
+<script src="{{ site.baseurl }}/assets/js/search.js" data-no-instant></script>
+<script src="{{ site.baseurl }}/assets/js/prism.js" data-no-instant></script>
+<script
+  src="{{ site.baseurl }}/assets/js/instantclick.min.js"
+  data-no-instant
+></script>
+<script data-no-instant>
+  InstantClick.on("change", () => {
+    // apply color scheme
+    setTheme();
+
+    Prism.highlightAll();
+    initCodeBlocks();
+
+    window.onscroll = () => {
+      setStickyness();
+    };
+
+    document
+    .getElementById("search-container")
+    .addEventListener("click", (event) => {
+      if (event.target.id === "search-container") {
+        hideSearch();
+      }
+    });
+
+    {% if jekyll.environment == "production" %}
+    const path = window.location.pathname + window.location.search + window.location.hash;
+    gtag("set", "page_path", path);
+    {% endif %}
+
+    const audioPlayer = document.getElementById("audio-player");
+    if(audioPlayer) {
+      const player = new BeyondWords.Player({
+        projectId: 11987,
+        target: audioPlayer,
+        playerStyle: "large",
+        widgetStyle: "small",
+        skipButtonStyle: "seconds",
+        highlightColor: isDark() ? DARK_HIGHLIGHT : LIGHT_HIGHLIGHT,
+        contentId: audioPlayer.dataset.audioId,
+      });
+    }
+
+    const comments = document.getElementById("comments");
+    if (comments) {
+      const giscusConfig = {
+        "src": "https://giscus.app/client.js",
+        "data-repo": "genicsblog/comments",
+        "data-repo-id": "R_kgDOG0-Vlw",
+        "data-category": "Announcements",
+        "data-category-id": "DIC_kwDOG0-Vl84CP8Dz",
+        "data-mapping": "pathname",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "top",
+        "data-theme": `${isDark() ? GISCUS_DARK : GISCUS_LIGHT}`,
+        "data-lang": "en",
+        "data-loading": "lazy",
+        "crossorigin": "anonymous",
+        "async": ""
+      }
+
+      const commentScript = document.createElement("script");
+      for (key in giscusConfig) {
+        commentScript.setAttribute(key, giscusConfig[key]);
+      }
+
+      comments.appendChild(commentScript);
+    }
+  });
+
+  InstantClick.on('receive', () => {
+    BeyondWords.Player.destroyAll();
+
+    // This function can be used to perform any local variable cleanups just before the page changes.
+    // Currently, it is used by tools (frontmatter, thumbnail) to remove globally scoped variables.
+    if (typeof window.cleanup === 'function') {
+      window.cleanup();
+      delete window.cleanup();
+    }
+  });
+
+  InstantClick.init("mousedown");
+</script>
+{% if page.layout == "post" and jekyll.environment == "production" %}
+<script>
+window.CustomSubstackWidget = {
+    substackUrl: "genicsblog.substack.com",
+    placeholder: "example@gmail.com",
+    buttonText: "Subscribe",
+    theme: "custom",
+    colors: isDark() ? {
+      primary: "#FFFFFF",
+      input: "#000000",
+      email: "#FFFFFF",
+      text: "#000000",
+    } : {
+      primary: "#000000",
+      input: "#FFFFFF",
+      email: "#000000",
+      text: "#FFFFFF",
+    },
+  };
+</script>
+<script src="https://substackapi.com/widget.js" async></script>
+{% endif %}

@@ -1,6 +1,11 @@
+.env
+*.gem
 _site
+.bundle
+.content
+.DS_Store
 .sass-cache
-.jekyll-metadata
-*.DS_Store
+node_modules
 Gemfile.lock
 .jekyll-cache
+package-lock.json
