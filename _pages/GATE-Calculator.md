@@ -5,7 +5,7 @@ description: "Learn how to use the GATE Calculator to estimate your score for th
 keywords: ["GATE Calculator", "GATE Score Estimator", "GATE Exam", "GATE Result Prediction", "Graduate Aptitude Test Calculator"]
 tags:   [GATE Calculator]
 category: [Student Calculator]
-image: '/images/Student-Finance-Calculator.webp'
+image: '/images/GATE-Calculator.webp'
 permalink: /GATE-Calculator
 istool: true
 ---
