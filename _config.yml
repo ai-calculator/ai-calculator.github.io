@@ -2,7 +2,7 @@
 # General Site Settings
 title: AI Calculator
 logo: # You can add own logo. For example '/images/logo.png'.
-description:  "AI Calculator is a web application that allows users to perform various calculations using artificial intelligence algorithms."
+description:  "AI Calculator is a web application, here you can perform various calculations using different AI Calculators."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 blog-theme: light # By default, Atega theme uses a 'light' color scheme, to change the color scheme to dark use 'dark' value (_includes/color-scheme)
@@ -23,7 +23,7 @@ author:
 hero:
   hero__title: Calculate Anything with <span class="hero__name">AI Calculator</span>.
   hero__job: 
-  hero__description: "AI Calculator is a web application that allows users to perform various calculations using artificial intelligence algorithms."
+  hero__description: "AI Calculator is a web application, here you can perform various calculations using different AI Calculators."
   hero__button__text: Read about the Author # Add your button text
   hero__button__link: '/about'
   hero__image: '/images/hero-image.webp'
