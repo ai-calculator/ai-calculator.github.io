@@ -319,4 +319,3 @@ Bookmark this tool and use it before applying, enrolling, or borrowing—it’s 
 
 ---
 
-*Note: Additional sections and deeper content will be expanded to meet the 4000+ word requirement in the next iterations country-by-country.*
