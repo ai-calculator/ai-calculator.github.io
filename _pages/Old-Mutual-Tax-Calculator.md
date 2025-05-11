@@ -77,7 +77,7 @@ istool: true
     }
   </style>
   <div class="calculator-container">
-    <h1>Old Mutual Tax Calculator</h1>
+    <h2>Old Mutual Tax Calculator</h2>
     <label for="country">Select Country:</label>
     <select id="country">
       <option value="za">South Africa</option>
