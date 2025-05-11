@@ -34,18 +34,18 @@
               <li class="nav-item">
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Ecommerce Tools
+                      Calculators
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu dropdown-content" aria-labelledby="dropdownMenuButton1">
                       {% for page in site.pages %}
-                      {% unless page.name == 'tags.html' or page.name == '404.html' %}
-                        {% if page.istool %}
-                        <li class="nav__item">
-                          <a href="{{ page.url | prepend: site.baseurl }}" class="dropdown-item">{{ page.title }}</a>
-                        </li>
-                        {% endif %}
-                      {% endunless %}
-                    {% endfor %}
+                        {% unless page.name == 'tags.html' or page.name == '404.html' %}
+                          {% if page.istool %}
+                          <li class="nav__item">
+                            <a href="{{ page.url | prepend: site.baseurl }}" class="dropdown-item">{{ page.title }}</a>
+                          </li>
+                          {% endif %}
+                        {% endunless %}
+                      {% endfor %}
                     </ul>
                   </div>
             </li>
