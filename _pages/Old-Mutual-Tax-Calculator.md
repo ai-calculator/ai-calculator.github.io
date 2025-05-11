@@ -6,6 +6,7 @@ keywords: ["Tax Calculator", "Old Mutual", "South Africa tax", "Namibia income t
 tags:   [Old Mutual Tax Calculator]
 category: [Tax Calculator]
 image: '/images/Old-Mutual-Tax-Calculator.webp'
+permalink: /Old-Mutual-Tax-Calculator
 istool: true
 ---
 
