@@ -109,6 +109,8 @@ function calculateGATE() {
 renderForm();
 </script>
 
+---
+
 The Graduate Aptitude Test in Engineering (GATE) is one of the most important exams for aspiring engineers in India. 
 
 Calculating your GATE score accurately is crucial for evaluating your chances of admission to top postgraduate programs or obtaining government jobs in the engineering sector. 
