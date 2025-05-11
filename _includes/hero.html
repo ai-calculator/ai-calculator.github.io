@@ -27,6 +27,7 @@
 
             <h1 class="hero__title">{{ page.title }}</h1>
             <a href="{{site.baseurl}}/about/" class="article__author-link"><span>By</span> {{site.author.name}}</a>
+            <p class="hero__description">{{ page.description }}</p>
 
             {% elsif page.path contains '_pages' or page.url contains '404' %}
             <h1 class="hero__title">{{ page.title }}</h1>
