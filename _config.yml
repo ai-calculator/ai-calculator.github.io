@@ -13,17 +13,20 @@ blog-theme: light # By default, Atega theme uses a 'light' color scheme, to chan
 author:
   name: Emily Stark
   image: '/images/Emily-Stark.webp' # Add your author image
+  description: "I am a content writer and SEO specialist with a passion for artificial intelligence. I create engaging and informative content that helps businesses connect with their audience and achieve their goals."
+  social:
+    twitter: https://twitter.com/Emily-Stark
 
 
 #-------------------------------
 # Hero Settings
 hero:
-  hero__title: Hi, I'm <span class="hero__name">Emily Stark</span>.
-  hero__job: Content Writer, Seo Specialist, and AI Enthusiast
-  hero__description: I am a content writer and SEO specialist with a passion for artificial intelligence. I create engaging and informative content that helps businesses connect with their audience and achieve their goals.
+  hero__title: Hi, This is <span class="hero__name"AI Calculator</span> site.
+  hero__job: 
+  hero__description: "AI Calculator is a web application that allows users to perform various calculations using artificial intelligence algorithms."
   hero__button__text: Read about me
   hero__button__link: '/about'
-  hero__image: '/images/Emily-Stark.webp'
+  hero__image: '/images/hero-image.webp'
 
 
 #-------------------------------
