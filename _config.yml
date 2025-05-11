@@ -21,7 +21,7 @@ author:
 #-------------------------------
 # Hero Settings
 hero:
-  hero__title: Hi, This is <span class="hero__name">AI Calculator</span> site.
+  hero__title: Calculate Anything with <span class="hero__name">AI Calculator</span>.
   hero__job: 
   hero__description: "AI Calculator is a web application that allows users to perform various calculations using artificial intelligence algorithms."
   hero__button__text: Read about the Author # Add your button text
