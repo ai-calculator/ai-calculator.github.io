@@ -1,5 +1,5 @@
 ---
-layout: tool
+layout: page
 title:  Old Mutual Tax Calculator
 tags:   [Old Mutual Tax Calculator]
 category: [Tax Calculator]
