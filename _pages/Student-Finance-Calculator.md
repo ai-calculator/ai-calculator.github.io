@@ -5,7 +5,7 @@ description: "Explore the Student Finance Calculator tool designed to estimate e
 keywords: ["Student Finance Calculator", "student loan estimator", "tuition cost calculator", "financial aid tool"]
 tags:   [Student Finance Calculator]
 category: [Finance Calculator]
-image: '/images/Old-Mutual-Tax-Calculator.webp'
+image: '/images/Student-Finance-Calculator.webp'
 permalink: /Student-Finance-Calculator
 istool: true
 ---
