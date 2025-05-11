@@ -1,6 +1,7 @@
 ---
 layout: page
 title:  Old Mutual Tax Calculator
+description: "Quickly estimate your annual tax based on your income and country of residence. Select South Africa, Namibia, or Zimbabwe to get started."
 tags:   [Old Mutual Tax Calculator]
 category: [Tax Calculator]
 ---
