@@ -17,6 +17,7 @@ istool: true
       max-width: 400px;
       width: 100%;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      margin 0 auto;
     }
 
     h1 {
