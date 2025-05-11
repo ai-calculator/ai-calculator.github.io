@@ -13,7 +13,7 @@ istool: true
   <style>
     .card { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     select, input { width: 100%; padding: 10px; margin: 10px 0; }
-    button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px; }
+    button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px;     display: block; margin: 15px auto 0;}
     .result { margin-top: 20px; font-weight: bold; }
   </style>
 
