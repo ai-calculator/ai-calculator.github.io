@@ -226,3 +226,9 @@ button.dropdown-toggle:hover {
 .card h2 {
   text-align: center;
 }
+@media only screen and (max-width: $desktop) {
+  .content-section {
+    margin-top: -90px;
+  }
+}
+
