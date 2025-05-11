@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "GATE Calculator: A Comprehensive Guide to Estimating Your GATE Score"
+title: "GATE Calculator"
 description: "Learn how to use the GATE Calculator to estimate your score for the Graduate Aptitude Test in Engineering and understand the factors involved."
 keywords: ["GATE Calculator", "GATE Score Estimator", "GATE Exam", "GATE Result Prediction", "Graduate Aptitude Test Calculator"]
 tags:   [GATE Calculator]
