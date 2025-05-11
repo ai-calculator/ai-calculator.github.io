@@ -1,29 +1,29 @@
 #-------------------------------
 # General Site Settings
-title: Pavlo Osadchyi
+title: AI Calculator
 logo: # You can add own logo. For example '/images/logo.png'.
-description:  Pavlo Osadchyi's personal website
+description:  "AI Calculator is a web application that allows users to perform various calculations using artificial intelligence algorithms."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://pavloosadchyi.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 blog-theme: light # By default, Atega theme uses a 'light' color scheme, to change the color scheme to dark use 'dark' value (_includes/color-scheme)
 
 
 #-------------------------------
 # Author Settings
 author:
-  name: Pavlo Osadchyi
-  image: '/images/01.jpg'
+  name: Emily Stark
+  image: '/images/Emily-Stark.webp' # Add your author image
 
 
 #-------------------------------
 # Hero Settings
 hero:
-  hero__title: Hi, I'm <span class="hero__name">Pavlo Osadchyi</span>.
-  hero__job: Software engineer
-  hero__description: Creative and pragmatic problem solver, husband and father.
+  hero__title: Hi, I'm <span class="hero__name">Emily Stark</span>.
+  hero__job: Content Writer, Seo Specialist, and AI Enthusiast
+  hero__description: I am a content writer and SEO specialist with a passion for artificial intelligence. I create engaging and informative content that helps businesses connect with their audience and achieve their goals.
   hero__button__text: Read about me
   hero__button__link: '/about'
-  hero__image: '/images/hero-image.webp'
+  hero__image: '/images/Emily-Stark.webp'
 
 
 #-------------------------------
@@ -37,7 +37,7 @@ hero:
 #-------------------------------
 # Contact Settings
 contact:
-  email: me@pavloosadchyi.com # Add your email for contant form
+  email: ai.calculate@gmail.com # Add your email for contant form
   description: If you are interested to talk, just shoot me a message
 
 # NOTE
@@ -59,26 +59,26 @@ social:
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus-identifier: pavloosadchyicom # add your shortname for Disqus Comment. For example mr-brown
+disqus-identifier:  # add your shortname for Disqus Comment. For example mr-brown
 
 
 #-------------------------------
 # Gallery Footer Section
-gallery:
-  title: Gallery
-  images:
-    - alt: 'Minimalism'
-      url: '/images/landscape1.jpg'
-    - alt: 'Minimalism'
-      url: '/images/sasha1.jpeg'
-    - alt: 'Minimalism'
-      url: '/images/castle1.jpg'
-    - alt: 'Minimalism'
-      url: '/images/scotland1.jpg'
-    - alt: 'Minimalism'
-      url: '/images/sanfran1.jpg'
-    - alt: 'Minimalism'
-      url: '/images/newyork1.jpg'
+# gallery:
+#   title: Gallery
+#   images:
+#     - alt: 'Minimalism'
+#       url: '/images/landscape1.jpg'
+#     - alt: 'Minimalism'
+#       url: '/images/sasha1.jpeg'
+#     - alt: 'Minimalism'
+#       url: '/images/castle1.jpg'
+#     - alt: 'Minimalism'
+#       url: '/images/scotland1.jpg'
+#     - alt: 'Minimalism'
+#       url: '/images/sanfran1.jpg'
+#     - alt: 'Minimalism'
+#       url: '/images/newyork1.jpg'
 
 
 #-------------------------------
