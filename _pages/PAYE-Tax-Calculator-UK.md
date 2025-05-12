@@ -4,10 +4,7 @@ title: "PAYE Tax Calculator UK"
 description: "Understand how the PAYE Tax Calculator works in the UK with this in-depth and beginner-friendly guide."
 keywords:
   [
-    "Student Finance Calculator",
-    "student loan estimator",
-    "tuition cost calculator",
-    "financial aid tool",
+    "PAYE Tax Calculator"
   ]
 tags: [PAYE Tax Calculator UK]
 category: [PAYE Tax Calculator]
