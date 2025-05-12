@@ -11,11 +11,11 @@ istool: true
 ---
 
 <style>
-    .card { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); };
-    h2 { text-align: center; };
-    input { width: 100%; padding: 10px; margin: 10px 0; };
-    button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px;  };
-    .result { margin-top: 20px; background:rgb(159, 225, 159); padding: 15px; border-radius: 8px; };
+    .card { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; }
+    input { width: 100%; padding: 10px; margin: 10px 0; }
+    button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px;  }
+    .result { margin-top: 20px; background:rgb(159, 225, 159); padding: 15px; border-radius: 8px; }
   </style>
   <div class="card">
     <h2>UK PAYE Tax Calculator 2024–2025</h2>
