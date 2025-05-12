@@ -10,13 +10,11 @@ permalink: /PAYE-Tax-Calculator-UK
 istool: true
 ---
 
-
-
-  <style>
-    .container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2 { text-align: center; }
-    input, button { width: 100%; padding: 10px; margin-top: 10px; }
-    .result { margin-top: 20px; background: #e7f3e7; padding: 15px; border-radius: 8px; }
+<style>
+    .container: { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2: { text-align: center; }
+    input, button: { width: 100%; padding: 10px; margin-top: 10px; }
+    .result: { margin-top: 20px; background: #e7f3e7; padding: 15px; border-radius: 8px; }
   </style>
   <div class="container">
     <h2>UK PAYE Tax Calculator 2024–2025</h2>
