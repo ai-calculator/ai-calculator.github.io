@@ -5,16 +5,17 @@ description: "Understand how the PAYE Tax Calculator works in the UK with this i
 keywords: ["Student Finance Calculator", "student loan estimator", "tuition cost calculator", "financial aid tool"]
 tags:   [PAYE Tax Calculator UK]
 category: [PAYE Tax Calculator]
-image: '/images/PAYE-Tax-Calculator.webp'
+image: '/images/PAYE-Tax-Calculator-UK.webp'
 permalink: /PAYE-Tax-Calculator-UK
 istool: true
 ---
 
 <style>
-    .card: { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2: { text-align: center; }
-    input, button: { width: 100%; padding: 10px; margin-top: 10px; }
-    .result: { margin-top: 20px; background: #e7f3e7; padding: 15px; border-radius: 8px; }
+    .card { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); };
+    h2 { text-align: center; };
+    input, button { width: 100%; padding: 10px; margin-top: 10px; };
+    button { background-color: #007b5e; };
+    .result { margin-top: 20px; background:rgb(159, 225, 159); padding: 15px; border-radius: 8px; };
   </style>
   <div class="card">
     <h2>UK PAYE Tax Calculator 2024–2025</h2>
