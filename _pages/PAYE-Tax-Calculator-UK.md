@@ -2,10 +2,16 @@
 layout: page
 title: "PAYE Tax Calculator UK"
 description: "Understand how the PAYE Tax Calculator works in the UK with this in-depth and beginner-friendly guide."
-keywords: ["Student Finance Calculator", "student loan estimator", "tuition cost calculator", "financial aid tool"]
-tags:   [PAYE Tax Calculator UK]
+keywords:
+  [
+    "Student Finance Calculator",
+    "student loan estimator",
+    "tuition cost calculator",
+    "financial aid tool",
+  ]
+tags: [PAYE Tax Calculator UK]
 category: [PAYE Tax Calculator]
-image: '/images/PAYE-Tax-Calculator-UK.webp'
+image: "/images/PAYE-Tax-Calculator-UK.webp"
 permalink: /PAYE-Tax-Calculator-UK
 istool: true
 ---
@@ -13,7 +19,7 @@ istool: true
 <style>
     .card { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     h2 { text-align: center; }
-    input { width: 100%; padding: 10px; margin: 10px 0; }
+    input { width: 100% !important; padding: 10px !important; margin: 10px 0 !important;  }
     button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px;  }
     .result { margin-top: 20px; background:rgb(159, 225, 159); padding: 15px; border-radius: 8px; }
   </style>
@@ -83,10 +89,9 @@ istool: true
     }
   </script>
 
-
 ---
 
-The PAYE (Pay As You Earn) system is the backbone of how most employees in the UK pay their income tax. This comprehensive guide explores everything about the PAYE Tax Calculator UK, from understanding tax bands and personal allowances to calculating National Insurance and net take-home pay. 
+The PAYE (Pay As You Earn) system is the backbone of how most employees in the UK pay their income tax. This comprehensive guide explores everything about the PAYE Tax Calculator UK, from understanding tax bands and personal allowances to calculating National Insurance and net take-home pay.
 
 With easy-to-understand examples and practical explanations, this article is your go-to resource for navigating your salary and tax deductions effectively. Whether you're a new employee, contractor, or someone looking to manage your finances better, this post will help you grasp how the PAYE Tax Calculator can empower your financial planning.
 
@@ -106,26 +111,26 @@ The PAYE system ensures that taxes are collected regularly and in real-time, red
 
 A PAYE Tax Calculator helps you estimate:
 
-* Gross income and deductions
-* Income tax liability
-* National Insurance contributions
-* Net take-home pay
+- Gross income and deductions
+- Income tax liability
+- National Insurance contributions
+- Net take-home pay
 
 It is especially useful if you want to:
 
-* Budget effectively
-* Compare job offers
-* Understand changes in your payslip
-* Forecast your yearly taxes
+- Budget effectively
+- Compare job offers
+- Understand changes in your payslip
+- Forecast your yearly taxes
 
 ### Features of a PAYE Tax Calculator
 
 Most modern PAYE Tax Calculators include:
 
-* Annual, monthly, or weekly salary input
-* Automatic application of tax bands
-* Adjustments for student loans and pensions
-* Inclusion of tax code variations
+- Annual, monthly, or weekly salary input
+- Automatic application of tax bands
+- Adjustments for student loans and pensions
+- Inclusion of tax code variations
 
 ## Income Tax in the UK
 
@@ -148,10 +153,10 @@ Everyone is entitled to a tax-free personal allowance unless your income exceeds
 
 If your salary is £60,000:
 
-* First £12,570 is tax-free
-* Next £37,700 taxed at 20% = £7,540
-* Remaining £9,730 taxed at 40% = £3,892
-* **Total Income Tax = £11,432**
+- First £12,570 is tax-free
+- Next £37,700 taxed at 20% = £7,540
+- Remaining £9,730 taxed at 40% = £3,892
+- **Total Income Tax = £11,432**
 
 ## National Insurance Contributions (NICs)
 
@@ -171,10 +176,10 @@ National Insurance contributions fund state benefits like the State Pension, mat
 
 For a salary of £60,000/year:
 
-* NI threshold: £12,570
-* Income between £12,570–£50,270 at 8% = £3,016
-* Income over £50,270 at 2% = £194
-* **Total NI = £3,210**
+- NI threshold: £12,570
+- Income between £12,570–£50,270 at 8% = £3,016
+- Income over £50,270 at 2% = £194
+- **Total NI = £3,210**
 
 ## Calculating Net Take-Home Pay
 
@@ -191,9 +196,9 @@ For a salary of £60,000/year:
 
 Free online PAYE Tax Calculators offer instant breakdowns. Some popular tools:
 
-* HMRC's official calculator
-* MoneySavingExpert Tax Calculator
-* Listentotaxman.co.uk
+- HMRC's official calculator
+- MoneySavingExpert Tax Calculator
+- Listentotaxman.co.uk
 
 ## PAYE Tax Codes
 
@@ -239,17 +244,17 @@ Umbrella companies process your pay through PAYE, including all tax and NI deduc
 
 These are deducted through PAYE if you earn above the threshold:
 
-* Plan 1: £24,990/year (9%)
-* Plan 2: £27,295/year (9%)
-* Plan 4 (Scotland): £27,660/year (9%)
-* Postgraduate Loan: £21,000/year (6%)
+- Plan 1: £24,990/year (9%)
+- Plan 2: £27,295/year (9%)
+- Plan 4 (Scotland): £27,660/year (9%)
+- Postgraduate Loan: £21,000/year (6%)
 
 ### Workplace Pension Contributions
 
 Auto-enrolment means employees contribute to a pension scheme. Typically:
 
-* Employee: 5%
-* Employer: 3%
+- Employee: 5%
+- Employer: 3%
 
 This affects your take-home pay and should be considered in PAYE calculators that support pension input.
 
@@ -261,18 +266,18 @@ Company car, private health insurance, and other perks are taxable and influence
 
 ### Inputs Required
 
-* Gross salary (annual or monthly)
-* Tax code (optional)
-* Student loan status
-* Pension contributions
+- Gross salary (annual or monthly)
+- Tax code (optional)
+- Student loan status
+- Pension contributions
 
 ### Output Breakdown
 
-* Income tax
-* NI contributions
-* Student loan
-* Pension deductions
-* Final take-home pay
+- Income tax
+- NI contributions
+- Student loan
+- Pension deductions
+- Final take-home pay
 
 ### Interpreting Results
 
@@ -296,19 +301,19 @@ Ensure you match the calculator’s input format — if it expects annual salary
 
 ### Financial Planning
 
-* Monthly budgeting
-* Savings goals
-* Debt repayment
+- Monthly budgeting
+- Savings goals
+- Debt repayment
 
 ### Salary Negotiation
 
-* Compare net pay offers
-* Calculate true value of offers
+- Compare net pay offers
+- Calculate true value of offers
 
 ### Compliance and Accuracy
 
-* Identify overpayments
-* Check for underpayments
+- Identify overpayments
+- Check for underpayments
 
 ## Final Thoughts
 
@@ -316,9 +321,9 @@ Using a PAYE Tax Calculator UK is essential for anyone earning through employmen
 
 ## Resources and Tools
 
-* [HMRC PAYE Tools](https://www.gov.uk/government/collections/paye-tools)
-* [Listentotaxman PAYE Calculator](https://listentotaxman.com)
-* [MoneySavingExpert Tax Calculator](https://www.moneysavingexpert.com)
+- [HMRC PAYE Tools](https://www.gov.uk/government/collections/paye-tools)
+- [Listentotaxman PAYE Calculator](https://listentotaxman.com)
+- [MoneySavingExpert Tax Calculator](https://www.moneysavingexpert.com)
 
 ## Frequently Asked Questions
 
