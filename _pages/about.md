@@ -5,11 +5,6 @@ permalink: /about/
 image: '/images/Emily-Stark.webp'
 ---
 
----
-
-title: "About Us"
-permalink: /about/
-------------------
 
 ## About AI Calculator
 
