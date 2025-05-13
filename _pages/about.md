@@ -2,15 +2,56 @@
 layout: page
 title: About
 permalink: /about/
-image: '/images/sanfran2.jpeg'
+image: '/images/Emily-Stark.webp'
 ---
 
-Hi, my name is Pavlo Osadchyi. I'm a Software Engineer with 8 years of experience in full-stack software development, software architecture, team leadership and agile methodologies. 
+---
 
-I like the idea outlined in the book [Pragmatic Programmer by David Thomas and Andrew Hunt](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/), that *rather than construction, software is more like gardening - it is more organic than concrete*. And in this sense, we, as Software Engineers, are also Software *Gardeners*. During my career, I've been learning how to write correct programs in constantly changing environments, *nurture* and *take care* of them so that they *grow* in something that makes end users (as well as maintainers) happy.
+title: "About Us"
+permalink: /about/
+------------------
 
-I had a chance to work on many projects in teams of different sizes. I've got a solid grasp of such things like testing, debugging, how to write correct and maintainable code. I'm extremely product-driven.
-I always try to pick the best tool for the job, therefore I was able to work with numerous front-end and back-end web technologies such as: React, Ember.js, Ruby On Rails, Java Spring MVC, Elixir, Python Flask, Terraform, Kubernetes.
+## About AI Calculator
 
-![Garden]({{site.baseurl}}/images/garden_tools.jpg?style=centerme)
-*Photo from escalontimes.com*
+Welcome to **AI Calculator** — your go-to destination for smart, accurate, and AI-powered calculation tools. Our website, [ai-calculator.github.io](https://ai-calculator.github.io), was built with a simple goal: to make complex calculations easier, faster, and more accessible for everyone.
+
+Whether you’re a student, a professional, or someone solving everyday problems, AI Calculator offers a suite of tools designed to deliver quick answers with precision and ease.
+
+## What We Offer
+
+Our platform includes a growing collection of intelligent calculators such as:
+
+* Loan & EMI Calculators
+* Body Mass Index (BMI) Calculators
+* Currency Converters
+* Age & Date Calculators
+* Unit Conversion Tools
+* Math Problem Solvers
+
+Each tool is optimized with modern UI, responsive design, and AI-enhanced logic to ensure accurate results and a great user experience.
+
+## Our Mission
+
+To empower users around the world with powerful online calculators that solve real-world problems using intuitive interfaces and cutting-edge AI technology.
+
+## Why Choose AI Calculator?
+
+* **Free to Use**: All tools are accessible without any charges.
+* **Privacy First**: We do not track or store your inputs.
+* **Easy to Use**: Clean interface, mobile-friendly, and no learning curve.
+* **Continuously Growing**: We regularly update and add new calculators based on user feedback.
+
+## Who We Are
+
+We are a small team of developers and data enthusiasts passionate about simplifying digital tools through automation and artificial intelligence. Our goal is to make AI Calculator the most trusted destination for reliable, AI-enhanced calculation tools.
+
+## Contact Us
+
+Have questions, suggestions, or feedback?
+
+* Email: [contact@ai-calculator.github.io](mailto:contact@ai-calculator.github.io)
+* GitHub: [github.com/ai-calculator](https://github.com/ai-calculator)
+
+---
+
+Thank you for using AI Calculator — making everyday calculations smarter.
