@@ -1,7 +1,7 @@
 #-------------------------------
 # General Site Settings
 title: AI Calculator
-logo: # You can add own logo. For example '/images/logo.png'.
+logo: '/images/Logo-calc.webp'
 description:  "AI Calculator is a web application, here you can perform various calculations using different AI Calculators."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ai-calculator.github.io" # the base hostname & protocol for your site, e.g. http://example.com
