@@ -69,6 +69,12 @@ istool: true
   </style>
 <div class="card">
   <h2>H&R Block-Style Tax Calculator</h2>
+  <label for="country">Select Country:</label>
+  <select id="country">
+    <option value="US">United States</option>
+    <option value="UK">United Kingdom</option>
+    <option value="CA">Canada</option>
+  </select> 
   <label for="income">Annual Income ($):</label>
   <input type="number" id="income" placeholder="Enter your gross income">
 
