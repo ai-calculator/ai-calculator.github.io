@@ -15,7 +15,7 @@ istool: true
 
 <style>
     .card { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2 { text-align: center; }
+    .card h2 { text-align: center; }
     input { width: 100% !important; padding: 10px !important; margin: 10px 0 !important;  }
     button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px;  };
     .result { margin-top: 20px; font-weight: bold; }  

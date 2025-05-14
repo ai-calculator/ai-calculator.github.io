@@ -21,11 +21,8 @@ istool: true
       margin: 0 auto;
     }
 
-    h1 {
-      font-size: 22px;
-      margin-bottom: 20px;
+    .card h2 {
       text-align: center;
-      color: #2c3e50;
     }
 
     label {

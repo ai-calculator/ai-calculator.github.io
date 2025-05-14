@@ -20,7 +20,7 @@ istool: true
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
   }
 
-  h2 {
+  .card h2 {
     text-align: center;
   }
 
