@@ -5,7 +5,7 @@ description: "Use our Retirement Income Calculator to estimate how much income y
 keywords: ["Retirement Income Calculator", "retirement planning", "retirement income", "retirement savings estimator"]
 tags: [Retirement Income Calculator]
 category: [Retirement Income Calculator]
-image: "/images/Retirement Income Calculator.webp"
+image: "/images/Retirement-Income-Calculator.webp"
 permalink: /Retirement-Income-Calculator
 istool: true
 ---
