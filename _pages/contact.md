@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 permalink: /contact/
-image: '/images/contact.jpeg'
+image: '/images/Contact-Us.webp'
 ---
 
 <div class="form-box">
