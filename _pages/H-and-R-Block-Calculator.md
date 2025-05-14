@@ -65,6 +65,7 @@ istool: true
       font-weight: bold;
       text-align: center;
     }
+    .hide-result: { display: none;}
   </style>
 <div class="card">
   <h2>H&R Block-Style Tax Calculator</h2>
@@ -79,7 +80,7 @@ istool: true
 
   <button onclick="calculateTax()">Calculate Tax</button>
 
-  <div class="result" id="result"></div>
+  <div class="result hide-result" id="result"></div>
 </div>
 
 <script>
@@ -102,6 +103,7 @@ istool: true
 
     const refundOrOwed = taxOwed < 0 ? `Refund: $${Math.abs(taxOwed).toFixed(2)}` : `Amount Owed: $${taxOwed.toFixed(2)}`;
     document.getElementById("result").textContent = refundOrOwed;
+    document.getElementById("result").ClassList.remove('hide-result');
   }
 
   function calculateUsTax(income) {
