@@ -82,12 +82,12 @@ istool: true
 </style>
   <div class="card">
     <h2>Retirement Income Calculator</h2>
-    <label for="country">Select Country:</label>
+    <!-- <label for="country">Select Country:</label>
     <select id="country">
       <option value="US">United States</option>
       <option value="UK">United Kingdom</option>
       <option value="CA">Canada</option>
-    </select>
+    </select> -->
     <label for="age">Current Age:</label>
     <input type="number" id="age" min="18" max="70" />
     <label for="retirementAge">Expected Retirement Age:</label>
