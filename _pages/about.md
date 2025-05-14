@@ -44,7 +44,7 @@ We are a small team of developers and data enthusiasts passionate about simplify
 
 Have questions, suggestions, or feedback?
 
-* Email: [contact@ai-calculator.github.io](mailto:contact@ai-calculator.github.io)
+* Email: [ai.calculate@gmail.com](mailto:ai.calculate@gmail.com)
 * GitHub: [github.com/ai-calculator](https://github.com/ai-calculator)
 
 ---
