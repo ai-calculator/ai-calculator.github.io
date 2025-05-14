@@ -65,14 +65,6 @@ istool: true
       font-weight: bold;
       text-align: center;
     }
-  .result {
-    margin-top: 2rem;
-    padding: 1rem;
-    background: #e7f4ea;
-    border: 1px solid #c1e1c1;
-    border-radius: 8px;
-  }
-
   .note {
     font-size: 0.9rem;
     color: #666;
@@ -140,7 +132,11 @@ istool: true
 
 ---
 
-Planning for retirement can feel overwhelming, especially with so many variables to consider like age, savings, expenses, and inflation. A Retirement Income Calculator simplifies the process by helping you estimate how much income you will need during your retirement years and how your current savings and pension will support that need. This guide provides a deep dive into retirement income planning using calculators and how to adjust your strategy depending on your goals, location, lifestyle, and more.
+Planning for retirement can feel overwhelming, especially with so many variables to consider like age, savings, expenses, and inflation. 
+
+A Retirement Income Calculator simplifies the process by helping you estimate how much income you will need during your retirement years and how your current savings and pension will support that need. 
+
+This guide provides a deep dive into retirement income planning using calculators and how to adjust your strategy depending on your goals, location, lifestyle, and more.
 
 ## Understanding the Retirement Income Calculator
 
