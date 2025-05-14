@@ -6,7 +6,7 @@ keywords: ["Retirement Income Calculator", "retirement planning", "retirement in
 tags: [Retirement Income Calculator]
 category: [Retirement Income Calculator]
 image: "/images/Retirement Income Calculator.webp"
-permalink: /Retirement Income Calculator
+permalink: /Retirement-Income-Calculator
 istool: true
 ---
 
