@@ -11,90 +11,90 @@ istool: true
 ---
 
 <style>
-  .card {
-    max-width: 400px;
-    margin: auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
+.card {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
 
-  h2 {
-    text-align: center;
-  }
+h2 {
+  text-align: center;
+}
 
-  label {
-    display: block;
-    margin-top: 1rem;
-  }
+label {
+  display: block;
+  margin-top: 1rem;
+}
 
-  select, input {
+select, input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+  button {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #007b5e;
+    color: #fff;
+    border: none;
     border-radius: 8px;
     font-size: 16px;
-    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #00664d;
   }
 
-    button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background-color: #007b5e;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #00664d;
-    }
-
-    .result {
-      margin-top: 20px;
-      padding: 10px;
-      background: #e8f5e9;
-      color: #2e7d32;
-      border: 1px solid #c8e6c9;
-      border-radius: 8px;
-      font-weight: bold;
-      text-align: center;
-    }
-  .note {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 1rem;
+  .result {
+    margin-top: 20px;
+    padding: 10px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
   }
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
 
 </style>
-  <div class="card">
-    <h2>Retirement Income Calculator</h2>
-    <!-- <label for="country">Select Country:</label>
-    <select id="country">
-      <option value="US">United States</option>
-      <option value="UK">United Kingdom</option>
-      <option value="CA">Canada</option>
-    </select> -->
-    <label for="age">Current Age:</label>
-    <input type="number" id="age" min="18" max="70" />
-    <label for="retirementAge">Expected Retirement Age:</label>
-    <input type="number" id="retirementAge" min="50" max="70" />
-    <label for="savings">Current Retirement Savings ($ or local currency):</label>
-    <input type="number" id="savings" />
-    <label for="monthlyExpenses">Expected Monthly Expenses in Retirement:</label>
-    <input type="number" id="monthlyExpenses" />
-    <label for="pension">Estimated Monthly Pension or Government Benefit:</label>
-    <input type="number" id="pension" />
-    <button onclick="calculateIncome()">Calculate</button>
-    <div id="output" class="result" style="display:none;"></div>
-  </div>
+<div class="card">
+  <h2>Retirement Income Calculator</h2>
+  <!-- <label for="country">Select Country:</label>
+  <select id="country">
+    <option value="US">United States</option>
+    <option value="UK">United Kingdom</option>
+    <option value="CA">Canada</option>
+  </select> -->
+  <label for="age">Current Age:</label>
+  <input type="number" id="age" min="18" max="70" />
+  <label for="retirementAge">Expected Retirement Age:</label>
+  <input type="number" id="retirementAge" min="50" max="70" />
+  <label for="savings">Current Retirement Savings ($ or local currency):</label>
+  <input type="number" id="savings" />
+  <label for="monthlyExpenses">Expected Monthly Expenses in Retirement:</label>
+  <input type="number" id="monthlyExpenses" />
+  <label for="pension">Estimated Monthly Pension or Government Benefit:</label>
+  <input type="number" id="pension" />
+  <button onclick="calculateIncome()">Calculate</button>
+  <div id="output" class="result" style="display:none;"></div>
+</div>
 
-  <script>
+<script>
     const lifeExpectancyByCountry = {
       US: 85,
       UK: 88,
@@ -128,7 +128,7 @@ istool: true
       document.getElementById('output').innerHTML = output;
       document.getElementById('output').style.display = 'block';
     }
-  </script>
+</script>
 
 ---
 
