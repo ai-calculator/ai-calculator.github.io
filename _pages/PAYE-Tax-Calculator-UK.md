@@ -7,7 +7,7 @@ keywords:
     "PAYE Tax Calculator"
   ]
 tags: [PAYE Tax Calculator UK]
-category: [PAYE Tax Calculator]
+category: [Tax Calculator]
 image: "/images/PAYE-Tax-Calculator-UK.webp"
 permalink: /PAYE-Tax-Calculator-UK
 istool: true
