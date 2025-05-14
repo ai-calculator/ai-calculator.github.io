@@ -2,7 +2,7 @@
 layout: page
 title: H&R Block Calculator USA
 description: "Explore how the H&R Block Calculator helps U.S. taxpayers estimate refunds and payments with ease and accuracy before filing."
-keywords: ["h&r block calculator", "tax refund estimator", "USA tax calculator", "H\&R Block tax tool"]
+keywords: ["h&r block calculator", "tax refund estimator", "USA tax calculator", "H&R Block tax tool"]
 tags: [H&R Block Calculator]
 category: [Tax Calculator]
 image: "/images/H-and-R-Block-Calculator.webp"
