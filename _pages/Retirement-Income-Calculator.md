@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Retirement Income Calculator: Plan Your Future with Confidence"
+title: "Retirement Income Calculator"
 description: "Use our Retirement Income Calculator to estimate how much income you'll need in retirement and how to plan your savings accordingly."
 keywords: ["Retirement Income Calculator", "retirement planning", "retirement income", "retirement savings estimator"]
 tags: [Retirement Income Calculator]
@@ -12,7 +12,7 @@ istool: true
 
 <style>
   .card {
-    max-width: 600px;
+    max-width: 400px;
     margin: auto;
     background: #fff;
     padding: 2rem;
