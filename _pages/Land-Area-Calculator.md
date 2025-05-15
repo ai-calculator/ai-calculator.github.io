@@ -18,12 +18,12 @@ istool: true
 </style>
   <div class="card">
     <h2>Land Area Calculator</h2>
-    <label for="country">Select Country:</label>
+    <!-- <label for="country">Select Country:</label>
     <select id="country">
       <option value="usa">USA</option>
       <option value="india">India</option>
       <option value="uk">UK</option>
-    </select>
+    </select> -->
     <label for="length">Enter Length (in meters):</label>
     <input type="number" id="length" placeholder="e.g., 50">
     <label for="width">Enter Width (in meters):</label>
