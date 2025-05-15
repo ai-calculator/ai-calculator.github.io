@@ -10,7 +10,9 @@ layout: default
       <div class="contaniner__inner animate">
         <div class="row">
             {% for page in site.pages %}
-              {% include tool-content.html %}
+              {% if page.istool %}
+                {% include tool-content.html %}
+              {% endif %}
             {% endfor %}
           {% if site.posts.size > 0 %}
           {% for post in paginator.posts %}
