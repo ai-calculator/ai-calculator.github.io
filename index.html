@@ -26,10 +26,10 @@ layout: default
 <div class="container content-section no-content-section">
   <div class="row">
     <div class="col col-12">
+      <h2 class="content-section__description seo-homepage-heading ">Our Calculators</h2>
+
       <div class="contaniner__inner animate">
         <div class="row">
-          <h2 class="content-section__description seo-homepage-heading ">Our Calculators</h2>
-
             {% for page in site.pages %}
               {% if page.istool %}
                 {% include tool-content.html %}
