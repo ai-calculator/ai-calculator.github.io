@@ -235,4 +235,9 @@ button.dropdown-toggle:hover {
     margin-top: -90px;
   }
 }
+@media only screen and (min-width: $desktop) {
+  .no-content-section {
+    margin-top: 0;
+  }
+}
 
