@@ -243,4 +243,12 @@ button.dropdown-toggle:hover {
 .seo-homepage-description {
   font-family: "Inter", Helvetica Neue, Helvetica, Arial, sans-serif !important;
 }
+.seo-homepage-heading {
+  font-size: 30px;
+}
 
+@media only screen and (min-width: $desktop) {
+  .seo-homepage-heading {
+    font-size: 40px;
+  }
+}
