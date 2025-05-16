@@ -1,6 +1,6 @@
 #-------------------------------
 # General Site Settings
-title: AI Calculator
+title: AI Calculator:Calculate Anything with AI
 logo: '/images/Logo-calc.webp'
 description:  "AI Calculator is a web application, here you can perform various calculations using different AI Calculators."
 baseurl: "" # the subpath of your site, e.g. /blog
