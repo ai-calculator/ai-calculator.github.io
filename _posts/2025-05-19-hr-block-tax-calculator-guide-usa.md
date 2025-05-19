@@ -5,7 +5,7 @@ permalink: "/hr-block-tax-calculator-guide-usa/"
 description: "Learn to use H&R Block's Tax Calculator effectively for accurate tax refund estimates in the USA with this step-by-step 2025 guide."
 tags: [H&R Block Calculator]
 category: [Tax Calculator]
-image:  '/images/featured_hr-block-tax-calculator-guide-usa.png'
+image:  '/images/featured_hr-block-tax-calculator-guide-usa.webp'
 tags:   Ember.js Testing Patterns JavaScript
 ---
 
