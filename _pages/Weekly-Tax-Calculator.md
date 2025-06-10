@@ -25,69 +25,85 @@ istool: true
         </select>
       </div>
       <div class="form-group">
-        <label for="weeklyIncome">Weekly Income:</label>
-        <input type="number" id="weeklyIncome" placeholder="Enter your weekly income">
+        <label for="weeklyIncome">Weekly Income (<span id="currencySymbol">$</span>):</label>
+        <input type="number" id="weeklyIncome" placeholder="Enter your weekly income" />
       </div>
       <button onclick="calculateTax()">Calculate Tax</button>
       <div class="result" id="result"></div>
 </div>
 
 <script>
+function updateCurrencySymbol() {
+  const country = document.getElementById("country").value;
+  const currencySymbol = document.getElementById("currencySymbol");
+
+  switch (country) {
+    case "usa":
+      currencySymbol.textContent = "$";
+      break;
+    case "uk":
+      currencySymbol.textContent = "£";
+      break;
+    case "australia":
+      currencySymbol.textContent = "A$";
+      break;
+  }
+}
+
 function calculateTax() {
   const country = document.getElementById("country").value;
-  const weeklyIncome = parseFloat(document.getElementById("weeklyIncome").value);
+  const income = parseFloat(document.getElementById("weeklyIncome").value);
+  const result = document.getElementById("result");
   let taxRate = 0;
-  let taxAmount = 0;
+  let symbol = document.getElementById("currencySymbol").textContent;
 
-  if (isNaN(weeklyIncome) || weeklyIncome <= 0) {
-    document.getElementById("result").innerText = "Please enter a valid income.";
+  if (isNaN(income) || income <= 0) {
+    result.innerText = "Please enter a valid weekly income.";
     return;
   }
 
   switch (country) {
     case "usa":
-      taxRate = getUSATaxRate(weeklyIncome);
+      taxRate = getUSATaxRate(income);
       break;
     case "uk":
-      taxRate = getUKTaxRate(weeklyIncome);
+      taxRate = getUKTaxRate(income);
       break;
     case "australia":
-      taxRate = getAustraliaTaxRate(weeklyIncome);
+      taxRate = getAustraliaTaxRate(income);
       break;
-    default:
-      taxRate = 0;
   }
 
-  taxAmount = weeklyIncome * taxRate;
-  const netIncome = weeklyIncome - taxAmount;
+  const taxAmount = income * taxRate;
+  const netIncome = income - taxAmount;
 
-  document.getElementById("result").innerHTML = `
-    Gross Weekly Income: $${weeklyIncome.toFixed(2)}<br>
-    Estimated Tax: $${taxAmount.toFixed(2)} (${(taxRate*100).toFixed(1)}%)<br>
-    Net Weekly Income: $${netIncome.toFixed(2)}
+  result.innerHTML = `
+    Gross Weekly Income: ${symbol}${income.toFixed(2)}<br>
+    Estimated Tax: ${symbol}${taxAmount.toFixed(2)} (${(taxRate * 100).toFixed(1)}%)<br>
+    Net Weekly Income: ${symbol}${netIncome.toFixed(2)}
   `;
 }
 
-// Sample tax rate estimators (for illustration purposes)
+// Basic tax brackets (simplified for demo)
 function getUSATaxRate(income) {
   if (income <= 600) return 0.10;
-  else if (income <= 1200) return 0.12;
-  else if (income <= 2000) return 0.22;
-  else return 0.24;
+  if (income <= 1200) return 0.12;
+  if (income <= 2000) return 0.22;
+  return 0.24;
 }
 
 function getUKTaxRate(income) {
-  if (income <= 242) return 0.0; // Weekly equivalent of personal allowance
-  else if (income <= 967) return 0.20;
-  else if (income <= 2000) return 0.40;
-  else return 0.45;
+  if (income <= 242) return 0.0;
+  if (income <= 967) return 0.20;
+  if (income <= 2000) return 0.40;
+  return 0.45;
 }
 
 function getAustraliaTaxRate(income) {
-  if (income <= 357) return 0.0; // Weekly tax-free threshold
-  else if (income <= 855) return 0.19;
-  else if (income <= 1785) return 0.325;
-  else return 0.37;
+  if (income <= 357) return 0.0;
+  if (income <= 855) return 0.19;
+  if (income <= 1785) return 0.325;
+  return 0.37;
 }
 </script>
 
