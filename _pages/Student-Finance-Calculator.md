@@ -21,7 +21,7 @@ istool: true
   <h2>Student Finance Calculator</h2>
   
   <label for="country">Select Country:</label>
-  <select id="country" onchange="renderForm()">
+  <select id="country" onchange="updateCurrencySymbol()">
     <option value="UK">United Kingdom</option>
     <option value="USA">United States</option>
     <option value="Canada">Canada</option>
@@ -108,6 +108,27 @@ function getAustraliaTaxRate(income) {
   if (income <= 1785) return 0.325;
   return 0.37;
 }
+function updateCurrencySymbol() {
+  const country = document.getElementById("country").value;
+  const currencySymbol = document.getElementById("currencySymbol");
+  const incomeInput = document.getElementById("weeklyIncome");
+
+  switch (country) {
+    case "usa":
+      currencySymbol.textContent = "$";
+      incomeInput.placeholder = "Enter weekly income in USD";
+      break;
+    case "uk":
+      currencySymbol.textContent = "£";
+      incomeInput.placeholder = "Enter weekly income in GBP";
+      break;
+    case "australia":
+      currencySymbol.textContent = "A$";
+      incomeInput.placeholder = "Enter weekly income in AUD";
+      break;
+  }
+}
+
 </script>
 
 
