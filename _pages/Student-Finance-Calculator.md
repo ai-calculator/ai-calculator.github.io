@@ -21,114 +21,82 @@ istool: true
   <h2>Student Finance Calculator</h2>
   
   <label for="country">Select Country:</label>
-  <select id="country" onchange="updateCurrencySymbol()">
+  <select id="country" onchange="renderForm()">
     <option value="UK">United Kingdom</option>
     <option value="USA">United States</option>
     <option value="Canada">Canada</option>
   </select>
-  <div class="form-group">
-    <label for="weeklyIncome">Weekly Income (<span id="currencySymbol">$</span>):</label>
-    <input type="number" id="weeklyIncome" placeholder="Enter your weekly income" />
-  </div>
+
+  <div id="formFields"></div>
 
   <button onclick="calculateFinance()">Calculate Finance</button>
   <div class="result" id="result"></div>
 </div>
 
 <script>
-function updateCurrencySymbol() {
-  const country = document.getElementById("country").value;
-  const currencySymbol = document.getElementById("currencySymbol");
-
-  switch (country) {
-    case "usa":
-      currencySymbol.textContent = "$";
-      break;
-    case "uk":
-      currencySymbol.textContent = "£";
-      break;
-    case "australia":
-      currencySymbol.textContent = "A$";
-      break;
+function renderForm() {
+  const country = document.getElementById('country').value;
+  const formFields = document.getElementById('formFields');
+  let html = '';
+  if (country === 'UK') {
+    html = `
+      <label>Household Income (£):</label>
+      <input type="number" id="income" placeholder="e.g. 30000" />
+      <label>Studying Inside London?</label>
+      <select id="inLondon">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+    `;
+  } else if (country === 'USA') {
+    html = `
+      <label>Expected Tuition ($):</label>
+      <input type="number" id="tuition" placeholder="e.g. 15000" />
+      <label>Family Contribution ($):</label>
+      <input type="number" id="contribution" placeholder="e.g. 5000" />
+    `;
+  } else if (country === 'Canada') {
+    html = `
+      <label>Province:</label>
+      <select id="province">
+        <option value="Ontario">Ontario</option>
+        <option value="Quebec">Quebec</option>
+        <option value="British Columbia">British Columbia</option>
+      </select>
+      <label>Household Income (CAD):</label>
+      <input type="number" id="income" placeholder="e.g. 40000" />
+    `;
   }
+  formFields.innerHTML = html;
 }
 
-function calculateTax() {
-  const country = document.getElementById("country").value;
-  const income = parseFloat(document.getElementById("weeklyIncome").value);
-  const result = document.getElementById("result");
-  let taxRate = 0;
-  let symbol = document.getElementById("currencySymbol").textContent;
+function calculateFinance() {
+  const country = document.getElementById('country').value;
+  let result = '';
 
-  if (isNaN(income) || income <= 0) {
-    result.innerText = "Please enter a valid weekly income.";
-    return;
+  if (country === 'UK') {
+    const income = parseFloat(document.getElementById('income').value || 0);
+    const inLondon = document.getElementById('inLondon').value;
+    let maxLoan = inLondon === 'yes' ? 12500 : 9500;
+    let reduction = Math.max(0, (income - 25000) * 0.001);
+    result = `Estimated Loan: £${(maxLoan - reduction).toFixed(2)}`;
+  } else if (country === 'USA') {
+    const tuition = parseFloat(document.getElementById('tuition').value || 0);
+    const contribution = parseFloat(document.getElementById('contribution').value || 0);
+    const need = Math.max(0, tuition - contribution);
+    result = `Estimated Federal Aid Eligibility: $${need.toFixed(2)}`;
+  } else if (country === 'Canada') {
+    const province = document.getElementById('province').value;
+    const income = parseFloat(document.getElementById('income').value || 0);
+    let baseAid = province === 'Ontario' ? 7000 : province === 'Quebec' ? 6000 : 6500;
+    let reduction = Math.max(0, (income - 30000) * 0.002);
+    result = `Estimated Grant: CAD $${(baseAid - reduction).toFixed(2)}`;
   }
 
-  switch (country) {
-    case "usa":
-      taxRate = getUSATaxRate(income);
-      break;
-    case "uk":
-      taxRate = getUKTaxRate(income);
-      break;
-    case "australia":
-      taxRate = getAustraliaTaxRate(income);
-      break;
-  }
-
-  const taxAmount = income * taxRate;
-  const netIncome = income - taxAmount;
-
-  result.innerHTML = `
-    Gross Weekly Income: ${symbol}${income.toFixed(2)}<br>
-    Estimated Tax: ${symbol}${taxAmount.toFixed(2)} (${(taxRate * 100).toFixed(1)}%)<br>
-    Net Weekly Income: ${symbol}${netIncome.toFixed(2)}
-  `;
+  document.getElementById('result').innerText = result;
 }
-
-// Basic tax brackets (simplified for demo)
-function getUSATaxRate(income) {
-  if (income <= 600) return 0.10;
-  if (income <= 1200) return 0.12;
-  if (income <= 2000) return 0.22;
-  return 0.24;
-}
-
-function getUKTaxRate(income) {
-  if (income <= 242) return 0.0;
-  if (income <= 967) return 0.20;
-  if (income <= 2000) return 0.40;
-  return 0.45;
-}
-
-function getAustraliaTaxRate(income) {
-  if (income <= 357) return 0.0;
-  if (income <= 855) return 0.19;
-  if (income <= 1785) return 0.325;
-  return 0.37;
-}
-function updateCurrencySymbol() {
-  const country = document.getElementById("country").value;
-  const currencySymbol = document.getElementById("currencySymbol");
-  const incomeInput = document.getElementById("weeklyIncome");
-
-  switch (country) {
-    case "usa":
-      currencySymbol.textContent = "$";
-      incomeInput.placeholder = "Enter weekly income in USD";
-      break;
-    case "uk":
-      currencySymbol.textContent = "£";
-      incomeInput.placeholder = "Enter weekly income in GBP";
-      break;
-    case "australia":
-      currencySymbol.textContent = "A$";
-      incomeInput.placeholder = "Enter weekly income in AUD";
-      break;
-  }
-}
-
+// Initial form render
+renderForm();
 </script>
 
 
