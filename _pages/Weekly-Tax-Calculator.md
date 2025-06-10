@@ -18,7 +18,7 @@ istool: true
       <h2>Weekly Tax Calculator</h2>
       <div class="form-group">
         <label for="country">Select Country:</label>
-        <select id="country">
+        <select id="country" onchange="updateCurrencySymbol()">
           <option value="usa">USA</option>
           <option value="uk">UK</option>
           <option value="australia">Australia</option>
