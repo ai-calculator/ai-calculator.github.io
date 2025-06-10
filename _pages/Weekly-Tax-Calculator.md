@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Weekly Tax Calculator: A Comprehensive Guide for the USA, Australia, and United Kingdom"
+title: "Weekly Tax Calculator: A Comprehensive Guide for the USA, AU, and UK"
 description: "Learn how to use a weekly tax calculator for the USA, Australia, and UK. Get step-by-step guides, tips, and tax tables for accurate weekly tax calculations."
 categories: TaxCalculator
 image: "/images/Weekly-Tax-Calculator.webp"
