@@ -21,7 +21,7 @@ istool: true
     .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
     label{display:block;font-size:0.9rem;margin-bottom:6px;color:var(--muted)}
     input[type=number], select, input[type=text]{width:100%;padding:10px;border:1px solid #e6edf3;border-radius:8px}
-    .grid .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .field.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .field{margin-bottom:12px}
     .small{font-size:0.85rem;color:var(--muted)}
     .switch{display:flex;gap:8px}
