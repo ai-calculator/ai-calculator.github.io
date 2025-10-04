@@ -34,8 +34,8 @@ istool: true
     .muted-box{background:#fafafa;border:1px solid #f0f4f8;padding:10px;border-radius:8px;color:var(--muted)}
   </style>
   <div class="wrap">
-    <h1>Agricultural Land Value Calculator</h1>
     <div class="grid">
+    <h2>Agricultural Land Value Calculator</h2>
       <section class="card">
         <h3 style="margin-top:0">Inputs</h3>
         <div class="field">
