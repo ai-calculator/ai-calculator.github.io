@@ -1,0 +1,23 @@
+---
+title: "Coding Rhodes, Ecommerce Expert at EcommerceMart"
+description: "Learn about Coding Rhodes, an ecommerce expert at EcommerceMart. Discover their insights on ecommerce, tech, and digital marketing."
+layout: default
+permalink: "/author-CodingRhodes"
+---
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-8">        
+        <div class="row align-items-center mb-5">
+            <div class="col-md-9">
+                <h2 class="font-weight-bold">{{page.title}} <span class="small btn btn-outline-success btn-sm btn-round"><a href="{{ site.authors.CodingRhodes.twitter }}">Follow</a></span></h2>
+                <p class="excerpt">{{ site.authors.CodingRhodes.bio }}</p>
+            </div>
+            <div class="col-md-3 text-right">
+                <img alt="{{ site.authors.CodingRhodes.name }}" src="{{ site.authors.CodingRhodes.avatar }}" data-echo="{{ site.authors.CodingRhodes.avatar }}" class="rounded-circle" height="100" width="100">
+            </div>
+        </div>
+        <h4 class="font-weight-bold spanborder"><span>Posts by {{page.title}}</span></h4>
+            {% assign posts = site.posts | where:"author","CodingRhodes" %}
+    </div>
+</div>
+</div>
