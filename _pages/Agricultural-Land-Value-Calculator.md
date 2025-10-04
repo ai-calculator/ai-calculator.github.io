@@ -35,7 +35,6 @@ istool: true
   </style>
   <div class="wrap">
     <h1>Agricultural Land Value Calculator</h1>
-    <p class="lead">Estimate farmland value per acre and total parcel value using soil fertility, irrigation, crop yield or comparable prices. Two valuation modes: <strong>Comparable-based</strong> and <strong>Income-capitalization</strong>.</p>
     <div class="grid">
       <section class="card">
         <h3 style="margin-top:0">Inputs</h3>
@@ -132,7 +131,6 @@ istool: true
           <button class="btn secondary" id="sample">Fill Sample</button>
           <button class="btn secondary" id="reset">Reset</button>
         </div>
-        <div style="margin-top:12px" class="muted-box">Note: This tool provides an estimate for agricultural value only. For legal, mortgage, or tax valuations, consult a licensed appraiser or local authority.</div>
       </section>
       <aside class="card">
         <h3 style="margin-top:0">Estimate Results</h3>
