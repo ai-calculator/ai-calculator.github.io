@@ -33,8 +33,6 @@ istool: true
     .stat .v{font-weight:700;font-size:1.1rem}
     .muted-box{background:#fafafa;border:1px solid #f0f4f8;padding:10px;border-radius:8px;color:var(--muted)}
   </style>
-</head>
-<body>
   <div class="wrap">
     <h1>Agricultural Land Value Calculator</h1>
     <p class="lead">Estimate farmland value per acre and total parcel value using soil fertility, irrigation, crop yield or comparable prices. Two valuation modes: <strong>Comparable-based</strong> and <strong>Income-capitalization</strong>.</p>
