@@ -17,13 +17,7 @@ istool: true
 </style>
 
 <div class="card">
-  <div class="wrap">
-<h1>Agricultural Land Value Calculator</h1>
-<p class="lead">Estimate farmland value per acre and total parcel value using soil fertility, irrigation, crop yield or comparable prices. Two valuation modes: <strong>Comparable-based</strong> and <strong>Income-capitalization</strong>.</p>
-
-<div class="grid">
-<section class="card">
-<h3 style="margin-top:0">Inputs</h3>
+<h2>Agricultural Land Value Calculator</h2>
 
 <div class="field">
 <label>Valuation Method</label>
@@ -138,7 +132,7 @@ restore();
 
 ---
 
-Our **Agricultural Land Value Calculator** helps farmers, landowners, investors and advisors estimate farmland value per acre (or hectare) using two practical methods: 
+Our **Agricultural Land Value Calculator** helps farmers, landowners, investors and advisors estimate farmland value per acre (or hectare) using two practical methods:
 
 **Comparable-based pricing** and **Income-capitalization**. The tool incorporates **soil fertility**, **irrigation reliability**, **crop yield adjustment**, and **location/access factors** so you get an explainable, market-aware estimate.
 
