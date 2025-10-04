@@ -59,8 +59,6 @@ return (n || 0).toLocaleString(undefined, {style:'currency', currency:'USD', max
 }
 function formatNumber(n){ return Number(n || 0).toLocaleString(undefined,{maximumFractionDigits:2}); }
 function round(n,d){ return Math.round(n*(10**d))/(10**d); }
-
-
 // UI wiring
 el('method').addEventListener('change', () => {
 if(el('method').value === 'comparable'){
@@ -71,8 +69,6 @@ el('comparableBlock').style.display = 'none';
 el('incomeBlock').style.display = '';
 }
 });
-
-
 el('calc').addEventListener('click', compute);
 el('sample').addEventListener('click', () => {
 el('method').value = 'comparable';
@@ -85,8 +81,6 @@ el('locationFactor').value = 1.0;
 el('yieldAdj').value = 10;
 compute();
 });
-
-
 el('reset').addEventListener('click', () => {
 localStorage.removeItem('agriCalc');
 document.querySelectorAll('input').forEach(i=>i.value='');
@@ -98,8 +92,6 @@ el('totalValue').textContent = '—';
 el('adjustmentSummary').textContent = '—';
 el('interpret').textContent = 'Run an estimate to see interpretation.';
 });
-
-
 // persistence
 function persist(){
 const state = {
@@ -303,3 +295,4 @@ Use the interactive tool to test parcels and save scenarios. If you want a local
 ---
 
 _Need help customizing the calculator for your region (India, USA, UK, Australia)? Ask me to build a localized version with recommended cap rates and sample comps._
+
