@@ -296,6 +296,7 @@ istool: true
 
 ---
 
+
 Our **Agricultural Land Value Calculator** helps farmers, landowners, investors and advisors estimate farmland value per acre (or hectare) using two practical methods:
 
 **Comparable-based pricing** and **Income-capitalization**. The tool incorporates **soil fertility**, **irrigation reliability**, **crop yield adjustment**, and **location/access factors** so you get an explainable, market-aware estimate.
