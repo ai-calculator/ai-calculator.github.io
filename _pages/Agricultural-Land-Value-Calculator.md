@@ -32,7 +32,6 @@ istool: true
     .stat .k{color:var(--muted)}
     .stat .v{font-weight:700;font-size:1.1rem}
     .muted-box{background:#fafafa;border:1px solid #f0f4f8;padding:10px;border-radius:8px;color:var(--muted)}
-    footer{margin-top:14px;color:var(--muted);font-size:0.9rem}
   </style>
 </head>
 <body>
@@ -151,7 +150,6 @@ istool: true
         </div>
       </aside>
     </div>
-    <footer>Tip: Use the income method when you have reliable revenue & cost data; use comps when recent local sales are available. Values saved to localStorage.</footer>
   </div>
 
   <script>
