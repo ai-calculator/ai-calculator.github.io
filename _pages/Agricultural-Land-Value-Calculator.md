@@ -9,21 +9,40 @@ permalink: /Agricultural-Land-Value-Calculator
 istool: true
 ---
 
-<style>
-  .card { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-  select, input { width: 100%; padding: 10px; margin: 10px 0; }
-  button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px; }
-  .result { margin-top: 20px; font-weight: bold; }
-</style>
-
-<div class="card">
-    <div class="wrap">
+  <style>
+    :root{--bg:#f3f6fb;--card:#ffffff;--muted:#6b7280;--accent:#16a34a;--accent-2:#06b6d4}
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; background:linear-gradient(180deg,#f7fafc 0%,var(--bg) 100%); color:#0f172a; padding:28px}
+    .wrap{max-width:980px;margin:0 auto}
+    h1{margin:0 0 8px;font-size:1.6rem}
+    p.lead{margin:0 0 18px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 360px}}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    label{display:block;font-size:0.9rem;margin-bottom:6px;color:var(--muted)}
+    input[type=number], select, input[type=text]{width:100%;padding:10px;border:1px solid #e6edf3;border-radius:8px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .field{margin-bottom:12px}
+    .small{font-size:0.85rem;color:var(--muted)}
+    .switch{display:flex;gap:8px}
+    .btn{display:inline-block;padding:10px 12px;border-radius:8px;border:none;background:var(--accent);color:#fff;font-weight:600;cursor:pointer}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(16,185,129,0.12)}
+    .result{display:grid;gap:10px}
+    .stat{padding:12px;border-radius:10px;background:linear-gradient(180deg,#f8fffa, #ffffff);border:1px solid rgba(16,185,129,0.08)}
+    .stat .k{color:var(--muted)}
+    .stat .v{font-weight:700;font-size:1.1rem}
+    .muted-box{background:#fafafa;border:1px solid #f0f4f8;padding:10px;border-radius:8px;color:var(--muted)}
+    footer{margin-top:14px;color:var(--muted);font-size:0.9rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
     <h1>Agricultural Land Value Calculator</h1>
     <p class="lead">Estimate farmland value per acre and total parcel value using soil fertility, irrigation, crop yield or comparable prices. Two valuation modes: <strong>Comparable-based</strong> and <strong>Income-capitalization</strong>.</p>
     <div class="grid">
-      <section class="form-group">
+      <section class="card">
         <h3 style="margin-top:0">Inputs</h3>
-        <div class="form-group">
+        <div class="field">
           <label>Valuation Method</label>
           <div class="switch">
             <select id="method">
@@ -33,7 +52,7 @@ istool: true
           </div>
           <div class="small">Choose how you want the land valued.</div>
         </div>
-        <div class="form-group">
+        <div class="field row">
           <div>
             <label>Area</label>
             <input type="number" id="area" placeholder="e.g. 10" min="0" step="any" />
@@ -48,29 +67,29 @@ istool: true
           </div>
         </div>
         <div id="comparableBlock">
-          <div class="form-group">
+          <div class="field">
             <label>Comparable Price (per acre)</label>
             <input type="number" id="compPrice" placeholder="e.g. 3000" step="any" min="0" />
             <div class="small">Enter recent sale price per acre from local comps (if available).</div>
           </div>
         </div>
         <div id="incomeBlock" style="display:none">
-          <div class="form-group">
+          <div class="field">
             <label>Expected Gross Revenue per Acre (annual)</label>
             <input type="number" id="grossRevenue" placeholder="e.g. 2000" step="any" min="0" />
           </div>
-          <div class="form-group">
+          <div class="field">
             <label>Operating Costs per Acre (annual)</label>
             <input type="number" id="operatingCosts" placeholder="e.g. 800" step="any" min="0" />
           </div>
-          <div class="form-group">
+          <div class="field">
             <label>Capitalization Rate (%)</label>
             <input type="number" id="capRate" placeholder="e.g. 8" step="any" min="0" />
             <div class="small">Value = Net Annual Income / (cap rate). Lower cap rate → higher land value.</div>
           </div>
         </div>
         <hr />
-        <div class="form-group">
+        <div class="field">
           <label>Soil Fertility (1 - 10)</label>
           <select id="soil">
             <option value="1">1 - Very Poor</option>
@@ -86,7 +105,7 @@ istool: true
           </select>
           <div class="small">Soil quality affects productivity — higher fertility increases value.</div>
         </div>
-        <div class="form-group">
+        <div class="field row">
           <div>
             <label>Irrigation</label>
             <select id="irrigation">
@@ -106,7 +125,7 @@ istool: true
             </select>
           </div>
         </div>
-        <div class="form-group">
+        <div class="field">
           <label>Crop Yield Adjustment (optional)</label>
           <input type="number" id="yieldAdj" placeholder="% expected above/below typical (e.g. 10 for +10%)" step="any" />
           <div class="small">Use to model known higher or lower-than-average crop performance.</div>
@@ -118,7 +137,7 @@ istool: true
         </div>
         <div style="margin-top:12px" class="muted-box">Note: This tool provides an estimate for agricultural value only. For legal, mortgage, or tax valuations, consult a licensed appraiser or local authority.</div>
       </section>
-      <aside class="form-group">
+      <aside class="card">
         <h3 style="margin-top:0">Estimate Results</h3>
         <div class="result" id="results">
           <div class="stat"><div class="k">Valuation Method</div><div class="v" id="outMethod">—</div></div>
@@ -134,74 +153,148 @@ istool: true
     </div>
     <footer>Tip: Use the income method when you have reliable revenue & cost data; use comps when recent local sales are available. Values saved to localStorage.</footer>
   </div>
-</div>
-<script>
-function formatCurrency(n){
-return (n || 0).toLocaleString(undefined, {style:'currency', currency:'USD', maximumFractionDigits:0});
-}
-function formatNumber(n){ return Number(n || 0).toLocaleString(undefined,{maximumFractionDigits:2}); }
-function round(n,d){ return Math.round(n*(10**d))/(10**d); }
-// UI wiring
-el('method').addEventListener('change', () => {
-if(el('method').value === 'comparable'){
-el('comparableBlock').style.display = '';
-el('incomeBlock').style.display = 'none';
-} else {
-el('comparableBlock').style.display = 'none';
-el('incomeBlock').style.display = '';
-}
-});
-el('calc').addEventListener('click', compute);
-el('sample').addEventListener('click', () => {
-el('method').value = 'comparable';
-el('area').value = 10;
-el('areaUnit').value = 'acre';
-el('compPrice').value = 3000;
-el('soil').value = 7;
-el('irrigation').value = 1.15;
-el('locationFactor').value = 1.0;
-el('yieldAdj').value = 10;
-compute();
-});
-el('reset').addEventListener('click', () => {
-localStorage.removeItem('agriCalc');
-document.querySelectorAll('input').forEach(i=>i.value='');
-document.querySelectorAll('select').forEach(s=>s.selectedIndex=0);
-el('method').dispatchEvent(new Event('change'));
-el('outMethod').textContent = '—';
-el('valuePerAcre').textContent = '—';
-el('totalValue').textContent = '—';
-el('adjustmentSummary').textContent = '—';
-el('interpret').textContent = 'Run an estimate to see interpretation.';
-});
-// persistence
-function persist(){
-const state = {
-method: el('method').value,
-area: el('area').value,
-areaUnit: el('areaUnit').value,
-compPrice: el('compPrice').value,
-grossRevenue: el('grossRevenue').value,
-operatingCosts: el('operatingCosts').value,
-capRate: el('capRate').value,
-soil: el('soil').value,
-irrigation: el('irrigation').value,
-locationFactor: el('locationFactor').value,
-yieldAdj: el('yieldAdj').value
-};
-localStorage.setItem('agriCalc', JSON.stringify(state));
-}
-function restore(){
-const raw = localStorage.getItem('agriCalc');
-if(!raw) return;
-try{
-const s = JSON.parse(raw);
-for(const k in s){ if(document.getElementById(k)) document.getElementById(k).value = s[k]; }
-el('method').dispatchEvent(new Event('change'));
-} catch(e){}
-}
-restore();
-</script>
+
+  <script>
+    const el = id => document.getElementById(id);
+
+    const toNumber = v => { const n = Number(v); return isNaN(n)?0:n; }
+
+    function areaToAcres(area, unit){
+      if(!area) return 0;
+      return unit === 'hectare' ? area * 2.47105381 : area; // 1 hectare = 2.47105 acres
+    }
+
+    function soilMultiplier(score){
+      // map 1..10 to multiplier 0.6 .. 1.3 (arbitrary but explainable)
+      return 0.6 + (score - 1) * ((1.3 - 0.6)/9);
+    }
+
+    function compute(){
+      const method = el('method').value;
+      const rawArea = toNumber(el('area').value);
+      const areaUnit = el('areaUnit').value;
+      const areaAc = areaToAcres(rawArea, areaUnit);
+
+      const soilScore = toNumber(el('soil').value) || 5;
+      const soilMult = soilMultiplier(soilScore);
+      const irrigationMult = parseFloat(el('irrigation').value) || 1;
+      const locationMult = parseFloat(el('locationFactor').value) || 1;
+      const yieldAdjPct = toNumber(el('yieldAdj').value) || 0;
+      const yieldAdj = 1 + yieldAdjPct/100;
+
+      let valuePerAcre = 0;
+      let note = [];
+
+      if(method === 'comparable'){
+        const compPrice = toNumber(el('compPrice').value);
+        if(!compPrice){ alert('Please enter a comparable price per acre.'); return; }
+        // Apply multipliers to comp price
+        valuePerAcre = compPrice * soilMult * irrigationMult * locationMult * yieldAdj;
+        note.push(`Base comp: ${formatCurrency(compPrice)} /acre`);
+      } else {
+        const gross = toNumber(el('grossRevenue').value);
+        const costs = toNumber(el('operatingCosts').value);
+        const capRatePct = toNumber(el('capRate').value);
+        if(capRatePct <= 0){ alert('Please enter a valid capitalization rate (>0).'); return; }
+        const netIncome = Math.max(gross - costs, 0);
+        const capRate = capRatePct/100;
+        const baseValue = netIncome / capRate; // value per acre
+        valuePerAcre = baseValue * soilMult * irrigationMult * locationMult * yieldAdj;
+        note.push(`Net income: ${formatCurrency(netIncome)} /acre · Cap rate: ${capRatePct}%`);
+      }
+
+      // rounding
+      valuePerAcre = Math.round(valuePerAcre);
+      const total = Math.round(valuePerAcre * areaAc);
+
+      // Build adjustment summary
+      const adjustments = [];
+      adjustments.push(`Soil ×${round(soilMult,2)}`);
+      adjustments.push(`Irrigation ×${irrigationMult}`);
+      adjustments.push(`Location ×${locationMult}`);
+      if(yieldAdjPct) adjustments.push(`Yield adj ${yieldAdjPct}%`);
+
+      // Output
+      el('outMethod').textContent = method === 'comparable' ? 'Comparable-based' : 'Income-capitalization';
+      el('valuePerAcre').textContent = `${formatCurrency(valuePerAcre)} /acre`;
+      el('totalValue').textContent = `${formatCurrency(total)} (${formatNumber(areaAc)} acres)`;
+      el('adjustmentSummary').textContent = adjustments.join(' · ');
+
+      el('interpret').textContent = note.join(' · ');
+
+      persist();
+    }
+
+    function formatCurrency(n){
+      return (n || 0).toLocaleString(undefined, {style:'currency', currency:'USD', maximumFractionDigits:0});
+    }
+    function formatNumber(n){ return Number(n || 0).toLocaleString(undefined,{maximumFractionDigits:2}); }
+    function round(n,d){ return Math.round(n*(10**d))/(10**d); }
+
+    // UI wiring
+    el('method').addEventListener('change', () => {
+      if(el('method').value === 'comparable'){
+        el('comparableBlock').style.display = '';
+        el('incomeBlock').style.display = 'none';
+      } else {
+        el('comparableBlock').style.display = 'none';
+        el('incomeBlock').style.display = '';
+      }
+    });
+
+    el('calc').addEventListener('click', compute);
+    el('sample').addEventListener('click', () => {
+      el('method').value = 'comparable';
+      el('area').value = 10;
+      el('areaUnit').value = 'acre';
+      el('compPrice').value = 3000;
+      el('soil').value = 7;
+      el('irrigation').value = 1.15;
+      el('locationFactor').value = 1.0;
+      el('yieldAdj').value = 10;
+      compute();
+    });
+
+    el('reset').addEventListener('click', () => {
+      localStorage.removeItem('agriCalc');
+      document.querySelectorAll('input').forEach(i=>i.value='');
+      document.querySelectorAll('select').forEach(s=>s.selectedIndex=0);
+      el('method').dispatchEvent(new Event('change'));
+      el('outMethod').textContent = '—';
+      el('valuePerAcre').textContent = '—';
+      el('totalValue').textContent = '—';
+      el('adjustmentSummary').textContent = '—';
+      el('interpret').textContent = 'Run an estimate to see interpretation.';
+    });
+
+    // persistence
+    function persist(){
+      const state = {
+        method: el('method').value,
+        area: el('area').value,
+        areaUnit: el('areaUnit').value,
+        compPrice: el('compPrice').value,
+        grossRevenue: el('grossRevenue').value,
+        operatingCosts: el('operatingCosts').value,
+        capRate: el('capRate').value,
+        soil: el('soil').value,
+        irrigation: el('irrigation').value,
+        locationFactor: el('locationFactor').value,
+        yieldAdj: el('yieldAdj').value
+      };
+      localStorage.setItem('agriCalc', JSON.stringify(state));
+    }
+    function restore(){
+      const raw = localStorage.getItem('agriCalc');
+      if(!raw) return;
+      try{
+        const s = JSON.parse(raw);
+        for(const k in s){ if(document.getElementById(k)) document.getElementById(k).value = s[k]; }
+        el('method').dispatchEvent(new Event('change'));
+      } catch(e){}
+    }
+    restore();
+  </script>
 
 ---
 
