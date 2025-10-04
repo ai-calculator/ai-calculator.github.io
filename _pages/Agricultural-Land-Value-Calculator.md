@@ -17,41 +17,123 @@ istool: true
 </style>
 
 <div class="card">
-  <h2>Agricultural Land Value Calculator</h2>
-  <div class="form-group">
-    <label>Valuation Method</label>
-    <div class="switch">
-      <select id="method">
-      <option value="comparable">Comparable-based (price / acre)</option>
-      <option value="income">Income Capitalization (net annual income / cap rate)</option>
-      </select>
+    <div class="wrap">
+    <h1>Agricultural Land Value Calculator</h1>
+    <p class="lead">Estimate farmland value per acre and total parcel value using soil fertility, irrigation, crop yield or comparable prices. Two valuation modes: <strong>Comparable-based</strong> and <strong>Income-capitalization</strong>.</p>
+    <div class="grid">
+      <section class="card">
+        <h3 style="margin-top:0">Inputs</h3>
+        <div class="form-group">
+          <label>Valuation Method</label>
+          <div class="switch">
+            <select id="method">
+              <option value="comparable">Comparable-based (price / acre)</option>
+              <option value="income">Income Capitalization (net annual income / cap rate)</option>
+            </select>
+          </div>
+          <div class="small">Choose how you want the land valued.</div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Area</label>
+            <input type="number" id="area" placeholder="e.g. 10" min="0" step="any" />
+            <div class="small">Enter parcel area</div>
+          </div>
+          <div>
+            <label>Area Unit</label>
+            <select id="areaUnit">
+              <option value="acre" selected>Acre</option>
+              <option value="hectare">Hectare</option>
+            </select>
+          </div>
+        </div>
+        <div id="comparableBlock">
+          <div class="form-group">
+            <label>Comparable Price (per acre)</label>
+            <input type="number" id="compPrice" placeholder="e.g. 3000" step="any" min="0" />
+            <div class="small">Enter recent sale price per acre from local comps (if available).</div>
+          </div>
+        </div>
+        <div id="incomeBlock" style="display:none">
+          <div class="form-group">
+            <label>Expected Gross Revenue per Acre (annual)</label>
+            <input type="number" id="grossRevenue" placeholder="e.g. 2000" step="any" min="0" />
+          </div>
+          <div class="form-group">
+            <label>Operating Costs per Acre (annual)</label>
+            <input type="number" id="operatingCosts" placeholder="e.g. 800" step="any" min="0" />
+          </div>
+          <div class="form-group">
+            <label>Capitalization Rate (%)</label>
+            <input type="number" id="capRate" placeholder="e.g. 8" step="any" min="0" />
+            <div class="small">Value = Net Annual Income / (cap rate). Lower cap rate → higher land value.</div>
+          </div>
+        </div>
+        <hr />
+        <div class="form-group">
+          <label>Soil Fertility (1 - 10)</label>
+          <select id="soil">
+            <option value="1">1 - Very Poor</option>
+            <option value="2">2 - Poor</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5 - Average</option>
+            <option value="6">6</option>
+            <option value="7">7 - Good</option>
+            <option value="8">8</option>
+            <option value="9">9 - Very Good</option>
+            <option value="10">10 - Excellent</option>
+          </select>
+          <div class="small">Soil quality affects productivity — higher fertility increases value.</div>
+        </div>
+        <div class="form-group">
+          <div>
+            <label>Irrigation</label>
+            <select id="irrigation">
+              <option value="0.8">None (−20%)</option>
+              <option value="0.95">Rain-fed (−5%)</option>
+              <option value="1" selected>Partial irrigation (base)</option>
+              <option value="1.15">Full reliable irrigation (+15%)</option>
+            </select>
+          </div>
+          <div>
+            <label>Access & Location Factor</label>
+            <select id="locationFactor">
+              <option value="0.8">Remote / Poor Access (−20%)</option>
+              <option value="0.95">Rural</option>
+              <option value="1" selected>Near Town / Good Access</option>
+              <option value="1.25">Close to Market / Town (+25%)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Crop Yield Adjustment (optional)</label>
+          <input type="number" id="yieldAdj" placeholder="% expected above/below typical (e.g. 10 for +10%)" step="any" />
+          <div class="small">Use to model known higher or lower-than-average crop performance.</div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+          <button class="btn" id="calc">Estimate Value</button>
+          <button class="btn secondary" id="sample">Fill Sample</button>
+          <button class="btn secondary" id="reset">Reset</button>
+        </div>
+        <div style="margin-top:12px" class="muted-box">Note: This tool provides an estimate for agricultural value only. For legal, mortgage, or tax valuations, consult a licensed appraiser or local authority.</div>
+      </section>
+      <aside class="form-group">
+        <h3 style="margin-top:0">Estimate Results</h3>
+        <div class="result" id="results">
+          <div class="stat"><div class="k">Valuation Method</div><div class="v" id="outMethod">—</div></div>
+          <div class="stat"><div class="k">Value per Acre</div><div class="v" id="valuePerAcre">—</div></div>
+          <div class="stat"><div class="k">Total Parcel Value</div><div class="v" id="totalValue">—</div></div>
+          <div class="stat"><div class="k">Adjustments Applied</div><div class="v" id="adjustmentSummary">—</div></div>
+        </div>
+        <div style="margin-top:12px">
+          <h4 style="margin:10px 0 6px">Quick Interpretation</h4>
+          <div id="interpret" class="small muted-box">Run an estimate to see interpretation.</div>
+        </div>
+      </aside>
     </div>
-    <div class="small">Choose how you want the land valued.</div>
+    <footer>Tip: Use the income method when you have reliable revenue & cost data; use comps when recent local sales are available. Values saved to localStorage.</footer>
   </div>
-
-<div class="form-group">
-  <div>
-    <label>Area</label>
-    <input type="number" id="area" placeholder="e.g. 10" min="0" step="any" />
-    <div class="small">Enter parcel area</div>
-  </div>
-  <div>
-    <label>Area Unit</label>
-    <select id="areaUnit">
-    <option value="acre" selected>Acre</option>
-    <option value="hectare">Hectare</option>
-    </select>
-  </div>
-</div>
-
-<div id="comparableBlock">
-  <div class="form-group">
-    <label>Comparable Price (per acre)</label>
-    <input type="number" id="compPrice" placeholder="e.g. 3000" step="any" min="0" />
-    <div class="small">Enter recent sale price per acre from local comps (if available).</div>
-  </div>
-
-</div>
 </div>
 <script>
 function formatCurrency(n){
