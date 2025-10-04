@@ -151,38 +151,30 @@ istool: true
       </aside>
     </div>
   </div>
-
   <script>
     const el = id => document.getElementById(id);
-
     const toNumber = v => { const n = Number(v); return isNaN(n)?0:n; }
-
     function areaToAcres(area, unit){
       if(!area) return 0;
       return unit === 'hectare' ? area * 2.47105381 : area; // 1 hectare = 2.47105 acres
     }
-
     function soilMultiplier(score){
       // map 1..10 to multiplier 0.6 .. 1.3 (arbitrary but explainable)
       return 0.6 + (score - 1) * ((1.3 - 0.6)/9);
     }
-
     function compute(){
       const method = el('method').value;
       const rawArea = toNumber(el('area').value);
       const areaUnit = el('areaUnit').value;
       const areaAc = areaToAcres(rawArea, areaUnit);
-
       const soilScore = toNumber(el('soil').value) || 5;
       const soilMult = soilMultiplier(soilScore);
       const irrigationMult = parseFloat(el('irrigation').value) || 1;
       const locationMult = parseFloat(el('locationFactor').value) || 1;
       const yieldAdjPct = toNumber(el('yieldAdj').value) || 0;
       const yieldAdj = 1 + yieldAdjPct/100;
-
       let valuePerAcre = 0;
       let note = [];
-
       if(method === 'comparable'){
         const compPrice = toNumber(el('compPrice').value);
         if(!compPrice){ alert('Please enter a comparable price per acre.'); return; }
@@ -200,35 +192,28 @@ istool: true
         valuePerAcre = baseValue * soilMult * irrigationMult * locationMult * yieldAdj;
         note.push(`Net income: ${formatCurrency(netIncome)} /acre · Cap rate: ${capRatePct}%`);
       }
-
       // rounding
       valuePerAcre = Math.round(valuePerAcre);
       const total = Math.round(valuePerAcre * areaAc);
-
       // Build adjustment summary
       const adjustments = [];
       adjustments.push(`Soil ×${round(soilMult,2)}`);
       adjustments.push(`Irrigation ×${irrigationMult}`);
       adjustments.push(`Location ×${locationMult}`);
       if(yieldAdjPct) adjustments.push(`Yield adj ${yieldAdjPct}%`);
-
       // Output
       el('outMethod').textContent = method === 'comparable' ? 'Comparable-based' : 'Income-capitalization';
       el('valuePerAcre').textContent = `${formatCurrency(valuePerAcre)} /acre`;
       el('totalValue').textContent = `${formatCurrency(total)} (${formatNumber(areaAc)} acres)`;
       el('adjustmentSummary').textContent = adjustments.join(' · ');
-
       el('interpret').textContent = note.join(' · ');
-
       persist();
     }
-
     function formatCurrency(n){
       return (n || 0).toLocaleString(undefined, {style:'currency', currency:'USD', maximumFractionDigits:0});
     }
     function formatNumber(n){ return Number(n || 0).toLocaleString(undefined,{maximumFractionDigits:2}); }
     function round(n,d){ return Math.round(n*(10**d))/(10**d); }
-
     // UI wiring
     el('method').addEventListener('change', () => {
       if(el('method').value === 'comparable'){
@@ -239,7 +224,6 @@ istool: true
         el('incomeBlock').style.display = '';
       }
     });
-
     el('calc').addEventListener('click', compute);
     el('sample').addEventListener('click', () => {
       el('method').value = 'comparable';
@@ -252,7 +236,6 @@ istool: true
       el('yieldAdj').value = 10;
       compute();
     });
-
     el('reset').addEventListener('click', () => {
       localStorage.removeItem('agriCalc');
       document.querySelectorAll('input').forEach(i=>i.value='');
@@ -264,8 +247,7 @@ istool: true
       el('adjustmentSummary').textContent = '—';
       el('interpret').textContent = 'Run an estimate to see interpretation.';
     });
-
-    // persistence
+  // persistence
     function persist(){
       const state = {
         method: el('method').value,
