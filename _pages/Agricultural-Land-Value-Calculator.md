@@ -17,43 +17,42 @@ istool: true
 </style>
 
 <div class="card">
-<h2>Agricultural Land Value Calculator</h2>
+  <h2>Agricultural Land Value Calculator</h2>
+  <div class="form-group">
+    <label>Valuation Method</label>
+    <div class="switch">
+      <select id="method">
+      <option value="comparable">Comparable-based (price / acre)</option>
+      <option value="income">Income Capitalization (net annual income / cap rate)</option>
+      </select>
+    </div>
+    <div class="small">Choose how you want the land valued.</div>
+  </div>
 
-<div class="field">
-<label>Valuation Method</label>
-<div class="switch">
-<select id="method">
-<option value="comparable">Comparable-based (price / acre)</option>
-<option value="income">Income Capitalization (net annual income / cap rate)</option>
-</select>
-</div>
-<div class="small">Choose how you want the land valued.</div>
-</div>
-
-<div class="field row">
-<div>
-<label>Area</label>
-<input type="number" id="area" placeholder="e.g. 10" min="0" step="any" />
-<div class="small">Enter parcel area</div>
-</div>
-<div>
-<label>Area Unit</label>
-<select id="areaUnit">
-<option value="acre" selected>Acre</option>
-<option value="hectare">Hectare</option>
-</select>
-</div>
+<div class="form-group">
+  <div>
+    <label>Area</label>
+    <input type="number" id="area" placeholder="e.g. 10" min="0" step="any" />
+    <div class="small">Enter parcel area</div>
+  </div>
+  <div>
+    <label>Area Unit</label>
+    <select id="areaUnit">
+    <option value="acre" selected>Acre</option>
+    <option value="hectare">Hectare</option>
+    </select>
+  </div>
 </div>
 
 <div id="comparableBlock">
-<div class="field">
-<label>Comparable Price (per acre)</label>
-<input type="number" id="compPrice" placeholder="e.g. 3000" step="any" min="0" />
-<div class="small">Enter recent sale price per acre from local comps (if available).</div>
-</div>
+  <div class="form-group">
+    <label>Comparable Price (per acre)</label>
+    <input type="number" id="compPrice" placeholder="e.g. 3000" step="any" min="0" />
+    <div class="small">Enter recent sale price per acre from local comps (if available).</div>
+  </div>
 
 </div>
-
+</div>
 <script>
 function formatCurrency(n){
 return (n || 0).toLocaleString(undefined, {style:'currency', currency:'USD', maximumFractionDigits:0});
