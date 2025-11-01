@@ -9,30 +9,10 @@ istool: true
 ---
 
 <style>
-  /* .card { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); } */
+  .card { background: white; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
   select, input { width: 100%; padding: 10px; margin: 10px 0; }
   button { padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 5px; }
   .result { margin-top: 20px; font-weight: bold; }
-    .wrap{max-width:1100px;margin:0 auto}
-    h1{margin:0 0 6px;font-size:1.6rem}
-    p.lead{margin:0 0 18px;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:1fr;gap:18px}
-    @media(min-width:980px){.grid{grid-template-columns:1fr 420px}}
-    .card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02)); border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
-    label{display:block;font-size:.9rem;margin-bottom:6px;color:var(--muted)}
-    input[type=number], input[type=text], select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .field{margin-bottom:12px}
-    .btn{display:inline-block;padding:10px 12px;border-radius:8px;border:none;background:var(--accent);color:#07203a;font-weight:700;cursor:pointer}
-    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(96,165,250,0.12)}
-    .stat{padding:12px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.04)}
-    .k{color:var(--muted);font-size:.9rem}
-    .v{font-weight:800;font-size:1.15rem;margin-top:6px}
-    .small{font-size:.85rem;color:var(--muted)}
-    .note{font-size:.85rem;color:var(--muted);margin-top:10px}
-    table{width:100%;border-collapse:collapse;margin-top:8px}
-    th,td{padding:8px 6px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.03);font-size:.92rem}
-    th{color:var(--muted)}
 </style>
 
 <div class="card">
@@ -40,7 +20,7 @@ istool: true
     <h1>Residual Land Value (RLV) Calculator</h1>
     <p class="lead">Estimate how much a developer could afford to pay for land by subtracting total development costs and required profit from the Gross Development Value (GDV).</p>
     <div class="grid">
-      <section class="card">
+      <section class="section">
         <h3 style="margin-top:0">Inputs</h3>
         <div class="field">
           <label>Gross Development Value (GDV)</label>
