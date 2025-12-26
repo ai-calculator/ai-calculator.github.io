@@ -25,13 +25,6 @@ image: "/images/property-roi-calculator.webp"
         box-sizing: border-box;
     }
     
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-        min-height: 100vh;
-        padding: 20px;
-    }
-    
     .container {
         max-width: 1400px;
         margin: 0 auto;
