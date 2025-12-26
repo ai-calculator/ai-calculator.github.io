@@ -2,6 +2,7 @@
 layout: page
 title: "Free Mortgage Calculator with Amortization Schedule & PDF Download"
 description: "Calculate your monthly mortgage payments instantly with our free calculator. Get detailed amortization schedules, see how much interest you'll pay, and download a complete payment breakdown."
+permalink: /Mortgage-Calculators
 categories:
   - Mortgage
   - Financial Planning
