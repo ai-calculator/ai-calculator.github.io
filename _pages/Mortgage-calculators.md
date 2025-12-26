@@ -21,185 +21,183 @@ Are you planning to buy a home and wondering what your monthly mortgage payment 
 <style>
 {margin: 0;padding: 0;box-sizing: border-box;}.container {max-width: 1200px;margin: 0 auto;}.header {text-align: center;color: white;margin-bottom: 40px;}.header h1 {font-size: 2.5em;margin-bottom: 10px;}.header p {font-size: 1.1em;opacity: 0.9;}.grid {display: grid;grid-template-columns: 1fr 2fr;gap: 30px;}@media (max-width: 968px) {.grid {grid-template-columns: 1fr;}}.card {background: white;border-radius: 15px;padding: 30px;box-shadow: 0 10px 30px rgba(0,0,0,0.2);}.card h2 {font-size: 1.5em;margin-bottom: 20px;color: #333;}.form-group {margin-bottom: 20px;}.form-group label {display: block;font-weight: 600;margin-bottom: 8px;color: #555;font-size: 0.9em;}.form-group input,.form-group select {width: 100%;padding: 12px;border: 2px solid #e0e0e0;border-radius: 8px;font-size: 1em;transition: border-color 0.3s;}.form-group input:focus,.form-group select:focus {outline: none;border-color: #667eea;}.form-group small {display: block;margin-top: 5px;color: #888;font-size: 0.85em;}.summary-cards {display: grid;grid-template-columns: repeat(2, 1fr);gap: 20px;margin-bottom: 30px;}@media (max-width: 600px) {.summary-cards {grid-template-columns: 1fr;}}.summary-card {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);padding: 25px;border-radius: 12px;color: white;}.summary-card.green {background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);}.summary-card.orange {background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);}.summary-card.blue {background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);}.summary-card h3 {font-size: 0.9em;opacity: 0.9;margin-bottom: 10px;}.summary-card .value {font-size: 2em;font-weight: bold;margin-bottom: 5px;}.summary-card .subtitle {font-size: 0.8em;opacity: 0.8;}.table-header {display: flex;justify-content: space-between;align-items: center;margin-bottom: 20px;}.btn {background: #667eea;color: white;border: none;padding: 12px 24px;border-radius: 8px;font-size: 1em;cursor: pointer;transition: background 0.3s;display: inline-flex;align-items: center;gap: 8px;}.btn:hover {background: #5568d3;}.table-container {overflow-x: auto;max-height: 500px;overflow-y: auto;border: 1px solid #e0e0e0;border-radius: 8px;}table {width: 100%;border-collapse: collapse;}thead {position: sticky;top: 0;background: #f5f5f5;z-index: 10;}th, td {padding: 12px;text-align: left;border-bottom: 1px solid #e0e0e0;}th {font-weight: 600;color: #333;}tbody tr:hover {background: #f9f9f9;}.text-right {text-align: right;}.section-divider {border-top: 2px solid #e0e0e0;margin: 25px 0;padding-top: 25px;}.section-divider h3 {font-size: 1.1em;margin-bottom: 15px;color: #333;}
 </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>🏠 Mortgage Calculator</h1>
-            <p>Calculate your monthly payments with detailed amortization schedule</p>
+<div class="container">
+    <div class="header">
+        <h1>🏠 Mortgage Calculator</h1>
+        <p>Calculate your monthly payments with detailed amortization schedule</p>
+    </div>
+    <div class="grid">
+        <!-- Input Section -->
+        <div class="card">
+            <h2>Loan Details</h2>
+            <div class="form-group">
+                <label>Home Price ($)</label>
+                <input type="number" id="loanAmount" value="300000">
+            </div>
+            <div class="form-group">
+                <label>Down Payment ($)</label>
+                <input type="number" id="downPayment" value="60000">
+                <small id="downPaymentPercent">20.0% of home price</small>
+            </div>
+            <div class="form-group">
+                <label>Interest Rate (%)</label>
+                <input type="number" step="0.1" id="interestRate" value="6.5">
+            </div>
+            <div class="form-group">
+                <label>Loan Term</label>
+                <select id="loanTerm">
+                    <option value="15">15 years</option>
+                    <option value="20">20 years</option>
+                    <option value="25">25 years</option>
+                    <option value="30" selected>30 years</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Start Date</label>
+                <input type="month" id="startDate" value="2025-01">
+            </div>
+            <div class="section-divider">
+                <h3>Additional Monthly Costs</h3>
+            </div>
+            <div class="form-group">
+                <label>Property Tax (annual $)</label>
+                <input type="number" id="propertyTax" value="3000">
+            </div>
+            <div class="form-group">
+                <label>Home Insurance (annual $)</label>
+                <input type="number" id="insurance" value="1200">
+            </div>
+            <div class="form-group">
+                <label>HOA Fees (monthly $)</label>
+                <input type="number" id="hoa" value="0">
+            </div>
         </div>
-        <div class="grid">
-            <!-- Input Section -->
-            <div class="card">
-                <h2>Loan Details</h2>
-                <div class="form-group">
-                    <label>Home Price ($)</label>
-                    <input type="number" id="loanAmount" value="300000">
+        <!-- Results Section -->
+        <div>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <h3>Monthly Payment</h3>
+                    <div class="value" id="totalMonthly">$0</div>
+                    <div class="subtitle">Total (P&I + Taxes + Insurance + HOA)</div>
                 </div>
-                <div class="form-group">
-                    <label>Down Payment ($)</label>
-                    <input type="number" id="downPayment" value="60000">
-                    <small id="downPaymentPercent">20.0% of home price</small>
+                <div class="summary-card orange">
+                    <h3>Total Interest</h3>
+                    <div class="value" id="totalInterest">$0</div>
+                    <div class="subtitle" id="interestSubtitle">Over 30 years</div>
                 </div>
-                <div class="form-group">
-                    <label>Interest Rate (%)</label>
-                    <input type="number" step="0.1" id="interestRate" value="6.5">
+                <div class="summary-card green">
+                    <h3>Loan Amount</h3>
+                    <div class="value" id="principal">$0</div>
+                    <div class="subtitle">Principal borrowed</div>
                 </div>
-                <div class="form-group">
-                    <label>Loan Term</label>
-                    <select id="loanTerm">
-                        <option value="15">15 years</option>
-                        <option value="20">20 years</option>
-                        <option value="25">25 years</option>
-                        <option value="30" selected>30 years</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Start Date</label>
-                    <input type="month" id="startDate" value="2025-01">
-                </div>
-                <div class="section-divider">
-                    <h3>Additional Monthly Costs</h3>
-                </div>
-                <div class="form-group">
-                    <label>Property Tax (annual $)</label>
-                    <input type="number" id="propertyTax" value="3000">
-                </div>
-                <div class="form-group">
-                    <label>Home Insurance (annual $)</label>
-                    <input type="number" id="insurance" value="1200">
-                </div>
-                <div class="form-group">
-                    <label>HOA Fees (monthly $)</label>
-                    <input type="number" id="hoa" value="0">
+                <div class="summary-card blue">
+                    <h3>Total Paid</h3>
+                    <div class="value" id="totalPaid">$0</div>
+                    <div class="subtitle">Principal + Interest</div>
                 </div>
             </div>
-            <!-- Results Section -->
-            <div>
-                <div class="summary-cards">
-                    <div class="summary-card">
-                        <h3>Monthly Payment</h3>
-                        <div class="value" id="totalMonthly">$0</div>
-                        <div class="subtitle">Total (P&I + Taxes + Insurance + HOA)</div>
-                    </div>
-                    <div class="summary-card orange">
-                        <h3>Total Interest</h3>
-                        <div class="value" id="totalInterest">$0</div>
-                        <div class="subtitle" id="interestSubtitle">Over 30 years</div>
-                    </div>
-                    <div class="summary-card green">
-                        <h3>Loan Amount</h3>
-                        <div class="value" id="principal">$0</div>
-                        <div class="subtitle">Principal borrowed</div>
-                    </div>
-                    <div class="summary-card blue">
-                        <h3>Total Paid</h3>
-                        <div class="value" id="totalPaid">$0</div>
-                        <div class="subtitle">Principal + Interest</div>
-                    </div>
+            <div class="card">
+                <div class="table-header">
+                    <h2>Amortization Schedule</h2>
+                    <button class="btn" onclick="downloadSchedule()">
+                        📥 Download Schedule
+                    </button>
                 </div>
-                <div class="card">
-                    <div class="table-header">
-                        <h2>Amortization Schedule</h2>
-                        <button class="btn" onclick="downloadSchedule()">
-                            📥 Download Schedule
-                        </button>
-                    </div>
-                    <div class="table-container">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Date</th>
-                                    <th class="text-right">Principal</th>
-                                    <th class="text-right">Interest</th>
-                                    <th class="text-right">Total</th>
-                                    <th class="text-right">Balance</th>
-                                </tr>
-                            </thead>
-                            <tbody id="scheduleTable">
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th class="text-right">Principal</th>
+                                <th class="text-right">Interest</th>
+                                <th class="text-right">Total</th>
+                                <th class="text-right">Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleTable">
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        let currentSchedule = [];
-        function formatCurrency(num) {
-            return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+</div>
+<script>
+    let currentSchedule = [];
+    function formatCurrency(num) {
+        return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    }
+    function formatCurrencyDetailed(num) {
+        return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+    function calculate() {
+        const loanAmount = parseFloat(document.getElementById('loanAmount').value) || 0;
+        const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
+        const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
+        const loanTerm = parseInt(document.getElementById('loanTerm').value) || 30;
+        const propertyTax = parseFloat(document.getElementById('propertyTax').value) || 0;
+        const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+        const hoa = parseFloat(document.getElementById('hoa').value) || 0;
+        const startDate = document.getElementById('startDate').value;
+        // Update down payment percentage
+        const downPercent = ((downPayment / loanAmount) * 100).toFixed(1);
+        document.getElementById('downPaymentPercent').textContent = `${downPercent}% of home price`;
+        const principal = loanAmount - downPayment;
+        const monthlyRate = interestRate / 100 / 12;
+        const numPayments = loanTerm * 12;
+        const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
+                              (Math.pow(1 + monthlyRate, numPayments) - 1);
+        const monthlyTax = propertyTax / 12;
+        const monthlyInsurance = insurance / 12;
+        const totalMonthly = monthlyPayment + monthlyTax + monthlyInsurance + hoa;
+        // Generate schedule
+        const schedule = [];
+        let balance = principal;
+        const [year, month] = startDate.split('-').map(Number);
+        for (let i = 1; i <= numPayments; i++) {
+            const interestPayment = balance * monthlyRate;
+            const principalPayment = monthlyPayment - interestPayment;
+            balance -= principalPayment;
+            const paymentDate = new Date(year, month - 1 + i - 1);
+            const dateStr = paymentDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            schedule.push({
+                payment: i,
+                date: dateStr,
+                principalPayment: principalPayment,
+                interestPayment: interestPayment,
+                totalPayment: monthlyPayment,
+                balance: Math.max(0, balance)
+            });
         }
-        function formatCurrencyDetailed(num) {
-            return '$' + num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        }
-        function calculate() {
-            const loanAmount = parseFloat(document.getElementById('loanAmount').value) || 0;
-            const downPayment = parseFloat(document.getElementById('downPayment').value) || 0;
-            const interestRate = parseFloat(document.getElementById('interestRate').value) || 0;
-            const loanTerm = parseInt(document.getElementById('loanTerm').value) || 30;
-            const propertyTax = parseFloat(document.getElementById('propertyTax').value) || 0;
-            const insurance = parseFloat(document.getElementById('insurance').value) || 0;
-            const hoa = parseFloat(document.getElementById('hoa').value) || 0;
-            const startDate = document.getElementById('startDate').value;
-            // Update down payment percentage
-            const downPercent = ((downPayment / loanAmount) * 100).toFixed(1);
-            document.getElementById('downPaymentPercent').textContent = `${downPercent}% of home price`;
-            const principal = loanAmount - downPayment;
-            const monthlyRate = interestRate / 100 / 12;
-            const numPayments = loanTerm * 12;
-            const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / 
-                                  (Math.pow(1 + monthlyRate, numPayments) - 1);
-            const monthlyTax = propertyTax / 12;
-            const monthlyInsurance = insurance / 12;
-            const totalMonthly = monthlyPayment + monthlyTax + monthlyInsurance + hoa;
-            // Generate schedule
-            const schedule = [];
-            let balance = principal;
-            const [year, month] = startDate.split('-').map(Number);
-            for (let i = 1; i <= numPayments; i++) {
-                const interestPayment = balance * monthlyRate;
-                const principalPayment = monthlyPayment - interestPayment;
-                balance -= principalPayment;
-                const paymentDate = new Date(year, month - 1 + i - 1);
-                const dateStr = paymentDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-                schedule.push({
-                    payment: i,
-                    date: dateStr,
-                    principalPayment: principalPayment,
-                    interestPayment: interestPayment,
-                    totalPayment: monthlyPayment,
-                    balance: Math.max(0, balance)
-                });
-            }
-            const totalInterest = schedule.reduce((sum, p) => sum + p.interestPayment, 0);
-            const totalPaid = principal + totalInterest;
-            // Update UI
-            document.getElementById('totalMonthly').textContent = formatCurrency(totalMonthly);
-            document.getElementById('totalInterest').textContent = formatCurrency(totalInterest);
-            document.getElementById('principal').textContent = formatCurrency(principal);
-            document.getElementById('totalPaid').textContent = formatCurrency(totalPaid);
-            document.getElementById('interestSubtitle').textContent = `Over ${loanTerm} years`;
-            // Update table
-            const tbody = document.getElementById('scheduleTable');
-            tbody.innerHTML = schedule.map(p => `
-                <tr>
-                    <td>${p.payment}</td>
-                    <td>${p.date}</td>
-                    <td class="text-right">${formatCurrencyDetailed(p.principalPayment)}</td>
-                    <td class="text-right">${formatCurrencyDetailed(p.interestPayment)}</td>
-                    <td class="text-right"><strong>${formatCurrencyDetailed(p.totalPayment)}</strong></td>
-                    <td class="text-right">${formatCurrency(p.balance)}</td>
-                </tr>
-            `).join('');
-            currentSchedule = { schedule, principal, monthlyPayment, totalMonthly, totalInterest, totalPaid, loanAmount, downPayment, interestRate, loanTerm, startDate };
-        }
-        function downloadSchedule() {
-            const { schedule, principal, monthlyPayment, totalMonthly, totalInterest, totalPaid, loanAmount, downPayment, interestRate, loanTerm, startDate } = currentSchedule;
-            const propertyTax = parseFloat(document.getElementById('propertyTax').value) || 0;
-            const insurance = parseFloat(document.getElementById('insurance').value) || 0;
-            const hoa = parseFloat(document.getElementById('hoa').value) || 0;
-            let content = `MORTGAGE AMORTIZATION SCHEDULE
+        const totalInterest = schedule.reduce((sum, p) => sum + p.interestPayment, 0);
+        const totalPaid = principal + totalInterest;
+        // Update UI
+        document.getElementById('totalMonthly').textContent = formatCurrency(totalMonthly);
+        document.getElementById('totalInterest').textContent = formatCurrency(totalInterest);
+        document.getElementById('principal').textContent = formatCurrency(principal);
+        document.getElementById('totalPaid').textContent = formatCurrency(totalPaid);
+        document.getElementById('interestSubtitle').textContent = `Over ${loanTerm} years`;
+        // Update table
+        const tbody = document.getElementById('scheduleTable');
+        tbody.innerHTML = schedule.map(p => `
+            <tr>
+                <td>${p.payment}</td>
+                <td>${p.date}</td>
+                <td class="text-right">${formatCurrencyDetailed(p.principalPayment)}</td>
+                <td class="text-right">${formatCurrencyDetailed(p.interestPayment)}</td>
+                <td class="text-right"><strong>${formatCurrencyDetailed(p.totalPayment)}</strong></td>
+                <td class="text-right">${formatCurrency(p.balance)}</td>
+            </tr>
+        `).join('');
+        currentSchedule = { schedule, principal, monthlyPayment, totalMonthly, totalInterest, totalPaid, loanAmount, downPayment, interestRate, loanTerm, startDate };
+    }
+    function downloadSchedule() {
+        const { schedule, principal, monthlyPayment, totalMonthly, totalInterest, totalPaid, loanAmount, downPayment, interestRate, loanTerm, startDate } = currentSchedule;
+        const propertyTax = parseFloat(document.getElementById('propertyTax').value) || 0;
+        const insurance = parseFloat(document.getElementById('insurance').value) || 0;
+        const hoa = parseFloat(document.getElementById('hoa').value) || 0;
+        let content = `MORTGAGE AMORTIZATION SCHEDULE
 ================================================================
 Loan Summary:
 ----------------------------------------------------------------
@@ -226,29 +224,29 @@ AMORTIZATION SCHEDULE
 Payment | Date        | Principal  | Interest   | Total      | Balance
 --------|-------------|------------|------------|------------|------------
 `;
-            schedule.forEach(p => {
-                content += `${String(p.payment).padStart(7)} | ${p.date.padEnd(11)} | ${formatCurrencyDetailed(p.principalPayment).padStart(10)} | ${formatCurrencyDetailed(p.interestPayment).padStart(10)} | ${formatCurrencyDetailed(p.totalPayment).padStart(10)} | ${formatCurrency(p.balance).padStart(11)}
+        schedule.forEach(p => {
+            content += `${String(p.payment).padStart(7)} | ${p.date.padEnd(11)} | ${formatCurrencyDetailed(p.principalPayment).padStart(10)} | ${formatCurrencyDetailed(p.interestPayment).padStart(10)} | ${formatCurrencyDetailed(p.totalPayment).padStart(10)} | ${formatCurrency(p.balance).padStart(11)}
 `;
-            });
-            content += `
+        });
+        content += `
 ================================================================
 Generated by AI Calculator - ${new Date().toLocaleDateString()}
 `;
-            const blob = new Blob([content], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `mortgage-schedule-${startDate}.txt`;
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-        // Add event listeners
-        document.querySelectorAll('input, select').forEach(elem => {
-            elem.addEventListener('input', calculate);
-        });
-        // Initial calculation
-        calculate();
-    </script>
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `mortgage-schedule-${startDate}.txt`;
+        a.click();
+        URL.revokeObjectURL(url);
+    }
+    // Add event listeners
+    document.querySelectorAll('input, select').forEach(elem => {
+        elem.addEventListener('input', calculate);
+    });
+    // Initial calculation
+    calculate();
+</script>
 ---
 
 ## Why Use a Mortgage Calculator?
