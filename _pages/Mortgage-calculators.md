@@ -23,7 +23,7 @@ Are you planning to buy a home and wondering what your monthly mortgage payment 
 </style>
 <div class="container">
     <div class="header">
-        <h1>🏠 Mortgage Calculator</h1>
+        <h2>🏠 Mortgage Calculator</h2>
         <p>Calculate your monthly payments with detailed amortization schedule</p>
     </div>
     <div class="grid">
