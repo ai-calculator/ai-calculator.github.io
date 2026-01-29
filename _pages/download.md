@@ -1,6 +1,7 @@
 ---
-layout: default
-title: Download AI
+layout: page
+title: Download AI Apps & Plugins 
+image: /images/ai-download-image.webp
 permalink: /download/
 ---
 
