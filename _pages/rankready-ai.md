@@ -145,6 +145,21 @@ permalink: /rankready-ai-plugin/
   border-radius: 4px;
   font-size: 0.9rem;
 }
+.btn--primary {
+  padding: 10px 24px;
+  border-radius: 6px;
+  background: #007bff;
+  color: white !important;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn--primary:hover {
+  background: #0056b3;
+  text-decoration: none;
+}
 .btn--large {
   padding: 15px 35px;
   font-size: 1.1rem;

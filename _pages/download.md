@@ -15,17 +15,12 @@ permalink: /download/
             <div class="download-item__info">
               <i class="ion ion-md-document"></i>
               <div class="download-item__details">
-                <span class="download-item__name">{{ file.name }}</span>
-                {% if file.name == 'rankready-ai.zip' %}
-                  <span class="badge badge--wp">WordPress Plugin</span>
-                {% endif %}
-              </div>
-            </div>
-            {% if file.name == 'rankready-ai.zip' %}
-              <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="btn btn--primary">View Details</a>
-            {% else %}
+            <div class="download-item__actions">
+              {% if file.name == 'rankready-ai.zip' %}
+                <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="btn btn--outline">View Details</a>
+              {% endif %}
               <a href="{{ site.baseurl }}{{ file.path }}" class="btn btn--primary" download>Download</a>
-            {% endif %}
+            </div>
           </div>
           
           {% if file.name == 'rankready-ai.zip' %}
@@ -101,6 +96,10 @@ permalink: /download/
   font-size: 2rem;
   color: var(--primary-color);
 }
+.download-item__actions {
+  display: flex;
+  gap: 10px;
+}
 .download-item__content {
   margin-top: 15px;
   padding-top: 15px;
@@ -136,17 +135,30 @@ permalink: /download/
 .link-more:hover {
   text-decoration: underline;
 }
-.btn--primary {
+.btn--primary, .btn--outline {
   padding: 10px 24px;
   border-radius: 6px;
-  background: #007bff;
-  color: white;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: all 0.2s;
+  display: inline-block;
+}
+.btn--primary {
+  background: #007bff;
+  color: white;
+  border: 1px solid #007bff;
 }
 .btn--primary:hover {
   background: #0056b3;
+}
+.btn--outline {
+  background: transparent;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+.btn--outline:hover {
+  background: #007bff;
+  color: white;
 }
 </style>
