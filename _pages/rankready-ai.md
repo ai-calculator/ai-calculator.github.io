@@ -9,6 +9,10 @@ permalink: /rankready-ai-plugin/
   <div class="product-header">
     <div class="product-header__content">
       <p class="lead-text">Automatically write SEO-optimized articles with human-like flow and featured images from Freepik.</p>
+      <div class="trial-banner">
+        <i class="ion ion-md-gift"></i>
+        <span><strong>Special Offer:</strong> 7 days free trial, then 1 article daily for free!</span>
+      </div>
       <a href="{{ site.baseurl }}/ai-download/rankready-ai.zip" class="btn btn--primary btn--large" download>
         <i class="ion ion-md-download"></i> Download Plugin
       </a>
@@ -94,6 +98,22 @@ permalink: /rankready-ai-plugin/
   margin-bottom: 25px;
   color: var(--heading-color);
   font-weight: 500;
+}
+.trial-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  padding: 12px 25px;
+  border-radius: 50px;
+  color: #2e7d32;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.trial-banner i {
+  font-size: 1.4rem;
 }
 .product-section {
   margin-bottom: 50px;

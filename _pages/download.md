@@ -15,6 +15,12 @@ permalink: /download/
             <div class="download-item__info">
               <i class="ion ion-md-document"></i>
               <div class="download-item__details">
+                <span class="download-item__name">{{ file.name }}</span>
+                {% if file.name == 'rankready-ai.zip' %}
+                  <span class="badge badge--wp">WordPress Plugin</span>
+                {% endif %}
+              </div>
+            </div>
             <div class="download-item__actions">
               {% if file.name == 'rankready-ai.zip' %}
                 <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="btn btn--outline">View Details</a>
@@ -26,6 +32,7 @@ permalink: /download/
           {% if file.name == 'rankready-ai.zip' %}
           <div class="download-item__content">
             <p><strong>RankReady AI</strong> is a premium WordPress plugin designed to generate high-quality, human-like content and automate your blog's publishing schedule. It features advanced AI logic for keyword-based and title-based article generation.</p>
+            <p class="trial-info"><strong>🎁 Special Offer:</strong> 7 days free trial, then 1 article daily for free!</p>
             <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="link-more">Learn more & Installation steps &rarr;</a>
           </div>
           {% endif %}
@@ -124,6 +131,15 @@ permalink: /download/
 }
 .feature-list i {
   color: #28a745;
+}
+.trial-info {
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: rgba(40, 167, 69, 0.1);
+  border-left: 4px solid #28a745;
+  border-radius: 4px;
+  color: #155724;
+  font-size: 0.95rem;
 }
 .link-more {
   display: inline-block;
