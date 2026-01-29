@@ -21,17 +21,17 @@ permalink: /download/
                 {% endif %}
               </div>
             </div>
-            <a href="{{ site.baseurl }}{{ file.path }}" class="btn btn--primary" download>Download</a>
+            {% if file.name == 'rankready-ai.zip' %}
+              <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="btn btn--primary">View Details</a>
+            {% else %}
+              <a href="{{ site.baseurl }}{{ file.path }}" class="btn btn--primary" download>Download</a>
+            {% endif %}
           </div>
           
           {% if file.name == 'rankready-ai.zip' %}
           <div class="download-item__content">
-            <p><strong>RankReady AI</strong> is a premium WordPress plugin designed to generate high-quality, human-like content and automate your blog's publishing schedule. It features advanced AI logic for keyword-based and title-based article generation, helping you rank higher on search engines effortlessly.</p>
-            <ul class="feature-list">
-              <li><i class="ion ion-md-checkmark-circle-outline"></i> Human-like content generation</li>
-              <li><i class="ion ion-md-checkmark-circle-outline"></i> Automated scheduling & posting</li>
-              <li><i class="ion ion-md-checkmark-circle-outline"></i> Keyword & Title based generation</li>
-            </ul>
+            <p><strong>RankReady AI</strong> is a premium WordPress plugin designed to generate high-quality, human-like content and automate your blog's publishing schedule. It features advanced AI logic for keyword-based and title-based article generation.</p>
+            <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="link-more">Learn more & Installation steps &rarr;</a>
           </div>
           {% endif %}
         </li>
@@ -125,6 +125,16 @@ permalink: /download/
 }
 .feature-list i {
   color: #28a745;
+}
+.link-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.link-more:hover {
+  text-decoration: underline;
 }
 .btn--primary {
   padding: 10px 24px;
