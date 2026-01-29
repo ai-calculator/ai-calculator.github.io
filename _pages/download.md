@@ -6,7 +6,6 @@ permalink: /download/
 ---
 
 <div class="downloads-container">
-  <p>Download our latest AI tools and resources from the list below.</p>
   
   <ul class="download-list list-reset">
     {% for file in site.static_files %}
