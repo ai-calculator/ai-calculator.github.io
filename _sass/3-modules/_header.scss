@@ -158,6 +158,23 @@
         color: $brand-color;
       }
     }
+
+    .nav__link--btn {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 4px;
+      background: $brand-color;
+      color: $white !important;
+      font-weight: 600;
+      transition: $global-transition;
+
+      &:hover {
+        background: darken($brand-color, 10%);
+        color: $white !important;
+        text-decoration: none !important;
+        transform: translateY(-2px);
+      }
+    }
   }
 }
 

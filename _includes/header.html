@@ -6,11 +6,11 @@
 
         <div class="logo">
           <a class="logo__link" href="{{ site.baseurl }}/">
-          {%if site.logo %}
+            {%if site.logo %}
             <img class="logo__image" src="{{ site.baseurl }}{{ site.logo }}" alt="{{ site.title }}"> AI Calculator
-          {% else %}
+            {% else %}
             {{ site.title }}
-          {% endif %}
+            {% endif %}
           </a>
         </div>
 
@@ -30,30 +30,33 @@
               <li class="nav__item">
                 <a href="{{ site.baseurl }}/contact" class="nav__link">Contact Us</a>
               </li>
-              <li class="nav__item">
-                <a href="{{ site.baseurl }}/download" class="nav__link">Download AI</a>
-              </li>
+
               <li class="nav__item">
                 <a href="{{ site.baseurl }}/privacy-policy" class="nav__link">Privacy Policy</a>
               </li>
               <li class="nav__item">
                 <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                      Calculators ⌵ 
-                    </button>
-                    <ul class="dropdown-menu dropdown-content" aria-labelledby="dropdownMenuButton1">
-                      {% for page in site.pages %}
-                        {% unless page.name == 'tags.html' or page.name == '404.html' %}
-                          {% if page.istool %}
-                          <li class="nav__item">
-                            <a href="{{ page.url | prepend: site.baseurl }}" class="dropdown-item">{{ page.title }}</a>
-                          </li>
-                          {% endif %}
-                        {% endunless %}
-                      {% endfor %}
-                    </ul>
-                  </div>
-            </li>
+                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Calculators ⌵
+                  </button>
+                  <ul class="dropdown-menu dropdown-content" aria-labelledby="dropdownMenuButton1">
+                    {% for page in site.pages %}
+                    {% unless page.name == 'tags.html' or page.name == '404.html' %}
+                    {% if page.istool %}
+                    <li class="nav__item">
+                      <a href="{{ page.url | prepend: site.baseurl }}" class="dropdown-item">{{ page.title }}</a>
+                    </li>
+                    {% endif %}
+                    {% endunless %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav__item">
+                <a href="{{ site.baseurl }}/download" class="nav__link nav__link--btn">Download AI</a>
+              </li>
 
             </ul>
           </div>
