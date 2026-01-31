@@ -26,6 +26,13 @@ permalink: /rankready-ai-plugin/
   </section>
 
   <section class="product-section">
+    <h2>See it in Action</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/2lTQ9uB8Euk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="product-section">
     <h2>Main Features</h2>
     <ul class="feature-circles">
       <li>
@@ -189,5 +196,22 @@ permalink: /rankready-ai-plugin/
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid var(--border-color);
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  background: #000;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>

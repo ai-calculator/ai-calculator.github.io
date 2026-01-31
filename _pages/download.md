@@ -34,6 +34,8 @@ permalink: /download/
             <p><strong>RankReady AI</strong> is a premium WordPress plugin designed to generate high-quality, human-like content and automate your blog's publishing schedule. It features advanced AI logic for keyword-based and title-based article generation.</p>
             <p class="trial-info"><strong>🎁 Special Offer:</strong> 7 days free trial, then 1 article daily for free!</p>
             <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="link-more">Learn more & Installation steps &rarr;</a>
+            <br>
+            <a href="https://www.youtube.com/watch?v=2lTQ9uB8Euk" target="_blank" class="link-more" style="color: #FF0000; margin-top: 5px;"><i class="ion ion-logo-youtube"></i> Watch Demo Video</a>
           </div>
           {% endif %}
         </li>
