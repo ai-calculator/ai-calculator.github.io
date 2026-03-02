@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Download AI Apps & Plugins 
+title: Download AI Plugins 
 image: /images/ai-download-image.webp
 permalink: /download/
 ---
@@ -16,7 +16,7 @@ permalink: /download/
               <i class="ion ion-md-document"></i>
               <div class="download-item__details">
                 <span class="download-item__name">{{ file.name }}</span>
-                {% if file.name == 'rankready-ai.zip' %}
+                {% if file.name == 'rankready-ai.zip' or file.name == 'masterai-store-builder.zip' %}
                   <span class="badge badge--wp">WordPress Plugin</span>
                 {% endif %}
               </div>
@@ -24,6 +24,8 @@ permalink: /download/
             <div class="download-item__actions">
               {% if file.name == 'rankready-ai.zip' %}
                 <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="btn btn--outline">View Details</a>
+              {% elsif file.name == 'masterai-store-builder.zip' %}
+                <a href="{{ site.baseurl }}/masterai-store-builder/" class="btn btn--outline">View Details</a>
               {% endif %}
               <a href="{{ site.baseurl }}{{ file.path }}" class="btn btn--primary" download>Download</a>
             </div>
@@ -36,6 +38,11 @@ permalink: /download/
             <a href="{{ site.baseurl }}/rankready-ai-plugin/" class="link-more">Learn more & Installation steps &rarr;</a>
             <br>
             <a href="https://www.youtube.com/watch?v=2lTQ9uB8Euk" target="_blank" class="link-more" style="color: #FF0000; margin-top: 5px;"><i class="ion ion-logo-youtube"></i> Watch Demo Video</a>
+          </div>
+          {% elsif file.name == 'masterai-store-builder.zip' %}
+          <div class="download-item__content">
+            <p><strong>MasterAI Store Builder</strong> is an all-in-one solution designed to help you launch a fully functioning, professional WooCommerce store in minutes. It replaces the complex setup process with a streamlined, intelligent wizard.</p>
+            <a href="{{ site.baseurl }}/masterai-store-builder/" class="link-more">Learn more & Installation steps &rarr;</a>
           </div>
           {% endif %}
         </li>
