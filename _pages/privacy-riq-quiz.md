@@ -51,4 +51,4 @@ Merchants can request data access or deletion by contacting support using the em
 Data is processed and stored using our application hosting infrastructure and Shopify's platform. Processing locations depend on the hosting configuration and may include regions outside the merchant's country.
 
 ## Changes
-This policy may be updated. The current version is stored in this repository as `PRIVACY.md`.
+This policy may be updated. The current version is stored in this repository as `privacy-policy-riq-quiz.md`.
